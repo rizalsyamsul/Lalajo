@@ -9,7 +9,7 @@
     <meta name="description" content="Neon Admin Panel" />
     <meta name="author" content="" />
 
-    <title>Neon | Dashboard</title>
+    <title>Dashboard</title>
 
 
     <link rel="stylesheet" href="assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
@@ -125,7 +125,7 @@
 
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="assets/images/thumb-1@2x.png" alt="" class="img-circle" width="44" />
-                                Art Ramadani
+                                Manager
                             </a>
 
                             <ul class="dropdown-menu">
@@ -197,8 +197,8 @@
                         <div class="icon"><i class="entypo-users"></i></div>
                         <div class="num" data-start="0" data-end="83" data-postfix="" data-duration="1500" data-delay="0">0</div>
 
-                        <h3>Registered users</h3>
-                        <p>so far in our blog, and our website.</p>
+                        <h3>User Terdaftar</h3>
+                        <p></p>
                     </div>
 
                 </div>
@@ -207,10 +207,10 @@
 
                     <div class="tile-stats tile-green">
                         <div class="icon"><i class="entypo-chart-bar"></i></div>
-                        <div class="num" data-start="0" data-end="135" data-postfix="" data-duration="1500" data-delay="600">0</div>
+                        <div class="num" data-start="0" data-end="635" data-postfix="" data-duration="1500" data-delay="600">0</div>
 
-                        <h3>Daily Visitors</h3>
-                        <p>this is the average value.</p>
+                        <h3>Pengunjung Harian</h3>
+                        <p>rata-rata pengunjung web</p>
                     </div>
 
                 </div>
@@ -221,8 +221,8 @@
                         <div class="icon"><i class="entypo-mail"></i></div>
                         <div class="num" data-start="0" data-end="23" data-postfix="" data-duration="1500" data-delay="1200">0</div>
 
-                        <h3>New Messages</h3>
-                        <p>messages per day.</p>
+                        <h3>Bioskop</h3>
+                        <p>dari sabang sampai merauke</p>
                     </div>
 
                 </div>
@@ -231,10 +231,10 @@
 
                     <div class="tile-stats tile-blue">
                         <div class="icon"><i class="entypo-rss"></i></div>
-                        <div class="num" data-start="0" data-end="52" data-postfix="" data-duration="1500" data-delay="1800">0</div>
+                        <div class="num" data-start="0" data-end="864" data-postfix="" data-duration="1500" data-delay="1800">0</div>
 
-                        <h3>Subscribers</h3>
-                        <p>on our site right now.</p>
+                        <h3>Tiket Terjual</h3>
+                        <p></p>
                     </div>
 
                 </div>
@@ -276,7 +276,7 @@
 
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <div class="panel-title">Latest Updated Profiles</div>
+                            <div class="panel-title">Penjualan Film Terlaris</div>
 
                             <div class="panel-options">
                                 <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg"><i class="entypo-cog"></i></a>
@@ -290,32 +290,32 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Activity</th>
+                                    <th>Nama Film</th>
+                                    <th>Total Tiket</th>
+                                    <th>Total Pemasukan</th>
                                 </tr>
                             </thead>
 
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>Art Ramadani</td>
-                                    <td>CEO</td>
-                                    <td class="text-center"><span class="inlinebar">4,3,5,4,5,6</span></td>
+                                    <td>Mortal Kombat</td>
+                                    <td>246</td>
+                                    <td class="text-center"><span class="inlinebar">Rp 9 840 000</span></td>
                                 </tr>
 
                                 <tr>
                                     <td>2</td>
-                                    <td>Filan Fisteku</td>
-                                    <td>Member</td>
-                                    <td class="text-center"><span class="inlinebar-2">1,3,4,5,3,5</span></td>
+                                    <td>The SpongeBob Movie: Sponge on the Run</td>
+                                    <td>132</td>
+                                    <td class="text-center"><span class="inlinebar-2">Rp 5 280 000</span></td>
                                 </tr>
 
                                 <tr>
                                     <td>3</td>
-                                    <td>Arlind Nushi</td>
-                                    <td>Co-founder</td>
-                                    <td class="text-center"><span class="inlinebar-3">5,3,2,5,4,5</span></td>
+                                    <td>Godzilla vs. Kong</td>
+                                    <td>218</td>
+                                    <td class="text-center"><span class="inlinebar-3">Rp 8 720 000</span></td>
                                 </tr>
 
                             </tbody>
@@ -332,7 +332,7 @@
             <footer class="main">
 
 
-                &copy; 2014 <strong>Neon</strong> Admin Theme by <a href="http://laborator.co" target="_blank">Laborator</a>
+                &copy; 2021 <strong>LalajoFilm</strong>.
 
             </footer>
         </div>
