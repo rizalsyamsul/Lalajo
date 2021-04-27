@@ -8,25 +8,25 @@
 }
 
 
-.DaftarRS {
+.DaftarLL {
   position: relative;
   text-align:center;
-  top: 70px;
+  top: 0;
   left: 5%;
   height: 100px;
   width: 90%;
   margin-bottom: 450px;
 }
 
-.HeaderRS {
-  position: relative;
-  top: 50px;
+.HeaderLL {
+  position: center;
+  top: 0;
   right: 0;
   left: 0;
-  height: 550px;
+  height: 600px;
   width: 100%;
-  background-image : url('<?php echo base_url() ?>/gambar/Hospitals.jpg');
-  background-size: 100% ;
+  background-image : url('<?php echo base_url() ?>/gambar/head.jpg');
+  background-size: 70% ;
   filter: contrast(80%);
 }
 h1{
@@ -49,21 +49,21 @@ h1{
   padding: 30px;
 }
 .card-img-top{
-  width: 100%;
-  height :300px;
+  width: 90%;
+  height :420px;
 }
 </style>
 </head>
 <body>
 <div class="row">
-  <div class="HeaderRS">
+  <div class="HeaderLL">
     <div class="row justify-content-center">
       <div class="txtHeader">
-          <h1>Daftar Rumah Sakit</h1>
+          <h1>Daftar Film</h1>
       </div>
     </div>
   </div>
-  <div class="DaftarRS">
+  <div class="DaftarLL">
 
     <hr class="my-4">
 
@@ -94,10 +94,10 @@ h1{
           <div class="row">
             <div class="col-md-4">
               <div class="card mb-2">
-                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/rshermina.jpg"
+                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/Avenger.jpg"
                   alt="Card image cap">
                 <div class="card-body">
-                  <h4 class="card-title">RS Hermina</h4>
+                  <h4 class="card-title">The Avengers</h4>
 
                 </div>
               </div>
@@ -105,10 +105,10 @@ h1{
 
             <div class="col-md-4 clearfix d-none d-md-block">
               <div class="card mb-2">
-                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/rspertamina.jpg"
+                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/Joker.png"
                   alt="Card image cap">
                 <div class="card-body">
-                  <h4 class="card-title">RS Pertamina</h4>
+                  <h4 class="card-title">Joker</h4>
 
                 </div>
               </div>
@@ -116,10 +116,10 @@ h1{
 
             <div class="col-md-4 clearfix d-none d-md-block">
               <div class="card mb-2">
-                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/rspersahabatan.jpg"
+                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/Kingsman.jpg"
                   alt="Card image cap">
                 <div class="card-body">
-                  <h4 class="card-title">RS Persahabatan</h4>
+                  <h4 class="card-title">Kingsman</h4>
 
                 </div>
               </div>
@@ -135,10 +135,10 @@ h1{
           <div class="row">
             <div class="col-md-4">
               <div class="card mb-2">
-                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/telkomedika.jpg"
+                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/MortalKombat.jpg"
                   alt="Card image cap">
                 <div class="card-body">
-                  <h4 class="card-title">Telkomedika</h4>
+                  <h4 class="card-title">Mortal Kombat</h4>
 
                 </div>
               </div>
@@ -146,10 +146,10 @@ h1{
 
             <div class="col-md-4 clearfix d-none d-md-block">
               <div class="card mb-2">
-                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/rsjakarta.jpg"
+                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/SuicideSquad.jpg"
                   alt="Card image cap">
                 <div class="card-body">
-                  <h4 class="card-title">RS Jakarta</h4>
+                  <h4 class="card-title">Suicide Squad</h4>
 
                 </div>
               </div>
@@ -157,10 +157,10 @@ h1{
 
             <div class="col-md-4 clearfix d-none d-md-block">
               <div class="card mb-2">
-                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/rshs.jpg"
+                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/TheRaid.jpg"
                   alt="Card image cap">
                 <div class="card-body">
-                  <h4 class="card-title">RS Hasan Sadikin</h4>
+                  <h4 class="card-title">The Raid</h4>
 
                 </div>
               </div>
@@ -174,10 +174,10 @@ h1{
           <div class="row">
             <div class="col-md-4">
               <div class="card mb-2">
-                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/rssantosa.png"
+                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/Cemara.jpg"
                   alt="Card image cap">
                 <div class="card-body">
-                  <h4 class="card-title">RS Santosa</h4>
+                  <h4 class="card-title">Keluarga Cemara</h4>
 
                 </div>
               </div>
@@ -185,10 +185,10 @@ h1{
 
             <div class="col-md-4 clearfix d-none d-md-block">
               <div class="card mb-2">
-                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/rsah.jpg"
+                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/sosis.jpg"
                   alt="Card image cap">
                 <div class="card-body">
-                  <h4 class="card-title">RS Al Ihsan</h4>
+                  <h4 class="card-title">Sausage Party</h4>
 
                 </div>
               </div>
@@ -196,10 +196,10 @@ h1{
 
             <div class="col-md-4 clearfix d-none d-md-block">
               <div class="card mb-2">
-                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/rsdc.jpg"
+                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/pie.jpg"
                   alt="Card image cap">
                 <div class="card-body">
-                  <h4 class="card-title">RS Dr Cipto Mangunkusumo</h4>
+                  <h4 class="card-title">American Pie</h4>
 
                 </div>
               </div>
