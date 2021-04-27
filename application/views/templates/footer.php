@@ -2,7 +2,7 @@
 <footer class="main">
 
 
-    &copy; 2014 <strong>Neon</strong> Admin Theme by <a href="http://laborator.co" target="_blank">Laborator</a>
+    &copy; 2021 <strong>LalajoFilm</strong> by Lalajo Team
 
 </footer>
 

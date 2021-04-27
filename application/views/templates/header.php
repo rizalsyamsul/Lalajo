@@ -55,7 +55,7 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a>
                 </li>
-                <li><a href="#">Link</a>
+                <li><a href="<?= base_url('pesan') ?>">Pesan</a>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
