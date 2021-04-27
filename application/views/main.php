@@ -25,7 +25,7 @@
   left: 0;
   height: 600px;
   width: 100%;
-  background-image : url('<?php echo base_url() ?>/gambar/head.jpg');
+  background-image : url('<?php echo base_url() ?>/gambar/teater.jpg');
   background-size: 70% ;
   filter: contrast(80%);
 }
