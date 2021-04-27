@@ -94,6 +94,13 @@
                     </button>
                 </div>
 
+                <div class="form-group">
+                    <button type="Back" class="btn btn-primary btn-block btn-login">
+                        <i class="entypo-login"></i>
+                        Back
+                    </button>
+                </div>
+
                 <a href="#">ToS</a> - <a href="#">Privacy Policy</a>
 
         </div>
