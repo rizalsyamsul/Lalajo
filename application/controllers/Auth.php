@@ -3,6 +3,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Auth extends CI_Controller
 {
+    /**
+     * Memuat library 'form_validation' yang akan dibutuhkan untuk pengecekan form login user.
+     * Memuat model 'M_Auth' yang akan digunakan untuk pengecekan data yang di input user dengan database.
+     */
     public function __construct()
     {
         parent::__construct();
@@ -10,6 +14,9 @@ class Auth extends CI_Controller
         $this->load->model('M_Auth');
     }
 
+    /**
+     * Memeriksa session user, jika tidak ada akan diarahkan ke halaman login
+     */
     public function index()
     {
         if ($this->session->userdata('email')) {
@@ -29,7 +36,9 @@ class Auth extends CI_Controller
         }
     }
 
-
+    /**
+     * Mulai login. Login user diperiksa berdasarkan 'role_id' nya
+     */
     private function _login()
     {
         $username = $this->input->post('username');
@@ -55,15 +64,16 @@ class Auth extends CI_Controller
                 redirect('auth');
             }
         } else {
-            // usernya ga ada
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Username tidak ada. Silahkan register</div>');
             redirect('auth');
         }
     }
 
+    /**
+     * Mengakhiri session user yang sedang login
+     */
     public function logout()
     {
-
         $this->session->unset_userdata('email');
         $this->session->unset_userdata('role_id');
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Logout berhasil!</div>');
