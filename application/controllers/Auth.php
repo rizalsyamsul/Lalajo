@@ -3,10 +3,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Auth extends CI_Controller
 {
-    /**
-     * Memuat library 'form_validation' yang akan dibutuhkan untuk pengecekan form login user.
-     * Memuat model 'M_Auth' yang akan digunakan untuk pengecekan data yang di input user dengan database.
-     */
     public function __construct()
     {
         parent::__construct();
@@ -14,69 +10,98 @@ class Auth extends CI_Controller
         $this->load->model('M_Auth');
     }
 
-    /**
-     * Memeriksa session user, jika tidak ada akan diarahkan ke halaman login
-     */
     public function index()
     {
-        if ($this->session->userdata('email')) {
-            $this->session->unset_userdata('email');
-            $this->session->unset_userdata('role_id');
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Anda Terlogout Otomatis Karena Sudah Login Sebelumnya</div>');
-            redirect('auth');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required');
+
+        if ($this->form_validation->run() == false) {
+            $data['title'] = 'Lalajo User Login';
+            $this->load->view('templates/auth_header', $data);
+            $this->load->view('auth/login');
+            $this->load->view('templates/auth_footer');
         } else {
-            $this->form_validation->set_rules('username', 'Username', 'required|trim');
-            $this->form_validation->set_rules('password', 'Password', 'required|trim');
-            if ($this->form_validation->run() == FALSE) {
-                $data['title'] = 'Manager Login';
-                $this->load->view('auth/login', $data);
-            } else {
-                $this->_login();
-            }
+            //success
+            $this->_login();
         }
     }
 
-    /**
-     * Mulai login. Login user diperiksa berdasarkan 'role_id' nya
-     */
     private function _login()
     {
-        $username = $this->input->post('username');
+        $email = $this->input->post('email');
         $password = $this->input->post('password');
 
-        $found = $this->M_Auth->login($username, $password);
-        $user = $this->db->get_where('user', ['username' => $username])->row_array();
+        $user = $this->db->get_where('user', ['email' => $email])->row_array();
 
-        if ($found) {
-            if ($user['password'] == $password) {
-                $data = [
-                    'email' => $user['email'],
-                    'role_id' => $user['role_id']
-                ];
-                $this->session->set_userdata($data);
-                if ($user['role_id'] == 1) {
-                    redirect('manager');
+        if ($user) {
+            //user aktif
+            if ($user['is_active'] == 1) {
+                if (password_verify($password, $user['password'])) {
+                    $data = [
+                        'email' => $user['email'],
+                        'role_id' => $user['role_id'],
+                    ];
+                    $this->session->set_userdata($data);
+                    if ($user['role_id'] == 2) {
+                        redirect('user');
+                    } else {
+
+                        redirect('admin');
+                    }
                 } else {
-                    redirect('user');
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Incorrect password!</div>');
+                    redirect('auth');
                 }
             } else {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah!</div>');
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">This account has not been activated!</div>');
                 redirect('auth');
             }
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Username tidak ada. Silahkan register</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Email is not registered!</div>');
             redirect('auth');
         }
     }
 
-    /**
-     * Mengakhiri session user yang sedang login
-     */
+
+    public function registration()
+    {
+        $this->form_validation->set_rules('name', 'Name', 'required|trim');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[user.email]', [
+            'is_unique' => 'This email has already registered!'
+        ]);
+        $this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[3]|matches[repassword]', [
+            'matches' => 'Password dont match!',
+            'min_length' => 'Password too short!'
+        ]);
+        $this->form_validation->set_rules('repassword', 'Password', 'required|trim|matches[password]');
+
+        if ($this->form_validation->run() == false) {
+            $data['title'] = 'Lalajo User Registration';
+            $this->load->view('templates/auth_header', $data);
+            $this->load->view('auth/registration');
+            $this->load->view('templates/auth_footer');
+        } else {
+            $data = [
+                'name' => htmlspecialchars($this->input->post('name', true)),
+                'email' => htmlspecialchars($this->input->post('email', true)),
+                'image' => 'default.jpg',
+                'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+                'role_id' => 2,
+                'is_active' => 1,
+                'date_created' => time()
+            ];
+            $this->M_Auth->insertUser($data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Congratulation! your account has been created. Please login</div>');
+            redirect('auth');
+        }
+    }
+
     public function logout()
     {
+
         $this->session->unset_userdata('email');
         $this->session->unset_userdata('role_id');
-        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Logout berhasil!</div>');
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">You\'ve been logged out!</div>');
         redirect('auth');
     }
 }
