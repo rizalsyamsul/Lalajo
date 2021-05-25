@@ -30,10 +30,10 @@ class Transaksi extends CI_Controller
 
         if ($transaksi['status'] == 'success') {
             $data = [
-                'film' => $this->input->post('film', true),
-                'jumlah' => $this->input->post('jumlah', true),
-                'harga' => $this->input->post('harga'),
-                'total' => $this->input->post('total', true)
+                'film' => $this->input->post('deskripsi', true),
+                'jumlah' => $this->input->post('rating', true),
+                'harga' => $this->input->post('judul'),
+                'total' => $this->input->post('kategori', true)
             ];
             $this->M_Transaksi->insertTransaksi($data);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Selamat! Pembayaran berhasil</div>');
