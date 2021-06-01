@@ -12,6 +12,7 @@ class Main extends CI_Controller
 
 	public function index()
 	{
+		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 		$data['title'] = 'LalajoFilm: Cheapest Movie Tickets Online Booking';
 		$this->load->view('templates/main_header', $data);
 		$this->load->view('Main');
