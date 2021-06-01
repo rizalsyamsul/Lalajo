@@ -23,11 +23,12 @@
   top: 0;
   right: 0;
   left: 0;
-  height: 600px;
+  height: 300px;
   width: 100%;
-  background-image : url('<?php echo base_url() ?>/gambar/head.jpg');
+  background-image : url('<?php echo base_url() ?>/gambar/header.png');
   background-size: 70% ;
-  filter: contrast(80%);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 h1{
   font-family: Open Sans;
@@ -37,16 +38,6 @@ h1{
   color: white;
   text-align:center;
 
-}
-.txtHeader {
-  position: relative;
-  left: 0;
-  text-align: center;
-  top:420px;
-  background: rgba(0, 0, 0, 0.7); /* Black background with 0.5 opacity */
-  color: white;
-  width: 100%;
-  padding: 30px;
 }
 .card-img-top{
   width: 100%;
@@ -58,9 +49,6 @@ h1{
 <div class="row">
   <div class="HeaderLL">
     <div class="row justify-content-center">
-      <div class="txtHeader">
-          <h1>Daftar Film</h1>
-      </div>
     </div>
   </div>
   <div class="DaftarLL">

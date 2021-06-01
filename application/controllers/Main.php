@@ -11,7 +11,7 @@ class Main extends CI_Controller {
 	public function index()
 	{
 		if($this->session->userdata('role_id') == "1") {
-			redirect('admin');	
+			redirect('admin');
 		} else if($this->session->userdata('role_id') == "2") {
 			redirect('user');
 		} else{
@@ -20,7 +20,7 @@ class Main extends CI_Controller {
 			$this->load->view('Main');
 			$this->load->view('templates/auth_footer');
 		}
-		
+
 
 	}
 }
