@@ -6,6 +6,8 @@ class Menu extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('M_Menu');
+
         is_logged_in();
     }
 
@@ -16,7 +18,7 @@ class Menu extends CI_Controller
 
         $this->form_validation->set_rules('menu', 'Menu', 'required');
 
-        $data['menu'] = $this->db->get('user_menu')->result_array();
+        $data['menu'] = $this->M_Menu->getMenu();
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
             $this->load->view('templates/sidebar', $data);
@@ -31,19 +33,25 @@ class Menu extends CI_Controller
         }
     }
 
+    public function deleteMenu($id)
+    {
+        $this->M_Menu->deleteMenu($id);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Menu berhasil dihapus!</div>');
+        redirect('menu');
+    }
+
     public function submenu()
     {
         $data['title'] = 'SubMenu Management';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $this->load->model('M_Menu', 'menu');
 
         $this->form_validation->set_rules('title', 'Title', 'required');
         $this->form_validation->set_rules('menu_id', 'Menu', 'required');
         $this->form_validation->set_rules('url', 'URL', 'required');
         $this->form_validation->set_rules('icon', 'icon', 'required');
 
-        $data['subMenu'] = $this->menu->getSubMenu();
-        $data['menu'] = $this->db->get('user_menu')->result_array();
+        $data['subMenu'] = $this->M_Menu->getSubMenu();
+        $data['menu'] = $this->M_Menu->getMenu();
 
 
         if ($this->form_validation->run() == FALSE) {
@@ -68,5 +76,12 @@ class Menu extends CI_Controller
             );
             redirect('menu/submenu');
         }
+    }
+
+    public function deleteSubMenu($id)
+    {
+        $this->M_Menu->deleteSubMenu($id);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Submenu berhasil dihapus!</div>');
+        redirect('menu/submenu');
     }
 }

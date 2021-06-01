@@ -28,7 +28,6 @@
         <div id="content">
 
             <!-- Topbar -->
-            <!-- <nav class="navbar navbar-expand navbar-light bg-light topbar mb-4 static-top shadow"> -->
 
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#">
@@ -62,9 +61,12 @@
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
-                        <?php if (($this->session->userdata('email'))) { ?>
-                            <a class="btn btn-outline-primary mr-1" href="<?= base_url('book'); ?>" role="button">Book</a>
-                            <a class="btn btn-outline-danger" href="<?= base_url('auth/logout'); ?>" role="button">Logout</a>
+                        <?php if ($user['role_id'] == 2) { ?>
+                            <a class="btn btn-outline-primary mr-1" href="<?= base_url('book'); ?>" role="button">Buy Tickets</a>
+                            <a class="btn btn-danger" href="<?= base_url('auth/logout'); ?>" role="button">Logout</a>
+                        <?php } elseif ($user['role_id'] == 1) { ?>
+                            <a class="btn btn-outline-primary mr-1" href="<?= base_url('admin'); ?>" role="button">Dashboard</a>
+                            <a class="btn btn-danger" href="<?= base_url('auth/logout'); ?>" role="button">Logout</a>
                         <?php } else { ?>
                             <a class="btn btn-outline-primary" href="<?= base_url('auth'); ?>" role="button">Login</a>
                         <?php } ?>
