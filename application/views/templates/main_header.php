@@ -17,50 +17,7 @@
 
     <!-- Custom styles for this template-->
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
 
-
-        .DaftarLL {
-            position: relative;
-            text-align: center;
-            top: 0;
-            left: 5%;
-            height: 100px;
-            width: 90%;
-            margin-bottom: 450px;
-        }
-
-        .HeaderLL {
-            position: center;
-            top: 0;
-            right: 0;
-            left: 0;
-            height: 300px;
-            width: 100%;
-            background-image: url('<?= base_url('/assets/img/header.png'); ?>');
-            background-size: 70%;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        h1 {
-            font-family: Open Sans;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 54px;
-            color: white;
-            text-align: center;
-
-        }
-
-        .card-img-top {
-            width: 100%;
-            height: 570px;
-        }
-    </style>
 </head>
 
 <body class="bg-gradient-primary">
@@ -105,10 +62,12 @@
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
-                        <a class="btn btn-outline-primary" href="<?= base_url('auth'); ?>" role="button">Login</a>
+                        <?php if (($this->session->userdata('email'))) { ?>
+                            <a class="btn btn-outline-primary mr-1" href="<?= base_url('book'); ?>" role="button">Book</a>
+                            <a class="btn btn-outline-danger" href="<?= base_url('auth/logout'); ?>" role="button">Logout</a>
+                        <?php } else { ?>
+                            <a class="btn btn-outline-primary" href="<?= base_url('auth'); ?>" role="button">Login</a>
+                        <?php } ?>
                     </form>
                 </div>
             </nav>
-
-
-            <!-- End of Topbar -->
