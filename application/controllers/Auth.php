@@ -6,12 +6,12 @@ class Auth extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->library('form_validation');
         $this->load->model('M_Auth');
     }
 
     public function index()
     {
+        goToDefaultPage();
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
 
@@ -65,6 +65,7 @@ class Auth extends CI_Controller
 
     public function registration()
     {
+        goToDefaultPage();
         $this->form_validation->set_rules('name', 'Name', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[user.email]', [
             'is_unique' => 'This email has already registered!'
@@ -103,5 +104,10 @@ class Auth extends CI_Controller
         $this->session->unset_userdata('role_id');
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">You\'ve been logged out!</div>');
         redirect('auth');
+    }
+
+    public function blocked()
+    {
+        $this->load->view('auth/blocked');
     }
 }
