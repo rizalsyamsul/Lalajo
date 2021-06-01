@@ -40,7 +40,7 @@
             left: 0;
             height: 300px;
             width: 100%;
-            background-image: url('<?= base_url('/assets/img/movies/header.png'); ?>');
+            background-image: url('<?= base_url('/assets/img/header.png'); ?>');
             background-size: 70%;
             background-repeat: no-repeat;
             background-position: center;
@@ -62,6 +62,7 @@
         }
     </style>
 </head>
+
 <body class="bg-gradient-primary">
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
