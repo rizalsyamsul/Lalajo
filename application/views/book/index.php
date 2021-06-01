@@ -32,8 +32,8 @@
             </select>
         </div>
         <div class="form-group col-md-8">
-            <label>Date and time</label>
-            <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+            <label>Date</label>
+            <input class="form-control" type="date" value="2021-06-01" id="example-datetime-local-input">
         </div>
 
         <div class="form-group col-md-8">
