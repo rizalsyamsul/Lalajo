@@ -42,7 +42,7 @@
                             <td><?= $sm['is_active']; ?></td>
                             <td>
                                 <a class="btn btn-warning" href="#" role="button">Edit</a>
-                                <a class="btn btn-danger" href="#" role="button">Delete</a>
+                                <a href="<?= base_url('menu/deleteSubMenu/') . $sm['id']; ?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin menghapus data ini?');">Delete</a>
                             </td>
                         </tr>
                         <?php $i++; ?>
