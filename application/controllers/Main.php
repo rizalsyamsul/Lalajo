@@ -17,4 +17,12 @@ class Main extends CI_Controller
 		$this->load->view('Main');
 		$this->load->view('templates/main_footer');
 	}
+
+	public function theater()
+	{
+		$data['title'] = 'Theater of LalajoFilm';
+		$this->load->view('templates/main_header', $data);
+		$this->load->view('Theater');
+		$this->load->view('templates/main_footer');
+	}
 }
