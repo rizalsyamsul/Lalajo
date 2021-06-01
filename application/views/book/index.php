@@ -45,9 +45,44 @@
             <label>No of Tickets</label>
             <input class="form-control col-md-2" type="number" value="0" min="0" max="10">
         </div>
+
         <div class="form-group col-md-8">
-            <button type="submit" class="btn btn-success">Buy</button>
+            <label>Seat</label>
+            <div class="form-row">
+                <div class="col-md-2">
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                        <option>E</option>
+                        <option>F</option>
+                        <option>G</option>
+                        <option>H</option>
+                        <option>I</option>
+                        <option>J</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>R</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                    </select>
+                </div>
+            </div>
         </div>
+        <div class="form-group col-md-8">
+            <!-- <button type="submit" class="btn btn-success">Buy</button> -->
+            <a type="button" class="btn btn-success" href="http://tix.id/">Buy</a>
+        </div>
+
     </form>
 
 

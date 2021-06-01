@@ -15,9 +15,9 @@
                     <p class="card-text"><small class="text-muted">Senin, 31 May 2021</small></p>
                     <p class="card-text"><small class="text-muted">D1, D2</small></p>
                     <div class="form-group">
-                        <label>Payment Code</label>
-                        <input class="form-control col-md-7" value="#A912KAO" disabled>
-                        <button type="submit" class="btn btn-success mt-2">Payment Confirmation</button>
+                        <label>Booking Code</label>
+                        <input class="form-control col-md-7" value="#1ORK1P2" disabled>
+                        <button type="submit" class="btn btn-success mt-2" disabled>Paid</button>
                     </div>
                 </div>
             </div>

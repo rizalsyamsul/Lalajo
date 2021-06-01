@@ -20,6 +20,16 @@ class Admin extends CI_Controller
         $this->load->view('admin/index', $data);
         $this->load->view('templates/footer', $data);
     }
+    public function report()
+    {
+        $data['title'] = 'Report';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('admin/report', $data);
+        $this->load->view('templates/footer', $data);
+    }
 
     public function role()
     {

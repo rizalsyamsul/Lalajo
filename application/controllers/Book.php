@@ -29,4 +29,14 @@ class Book extends CI_Controller
         $this->load->view('book/payment', $data);
         $this->load->view('templates/footer', $data);
     }
+    public function invoice()
+    {
+        $data['title'] = 'Invoice';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('book/invoice', $data);
+        $this->load->view('templates/footer', $data);
+    }
 }
