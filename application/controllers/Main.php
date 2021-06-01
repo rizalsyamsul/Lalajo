@@ -12,15 +12,9 @@ class Main extends CI_Controller
 
 	public function index()
 	{
-		if ($this->session->userdata('role_id') == "1") {
-			redirect('admin');
-		} else if ($this->session->userdata('role_id') == "2") {
-			redirect('user');
-		} else {
-			$data['title'] = 'Lalajo Film';
-			$this->load->view('templates/auth_header', $data);
-			$this->load->view('Main');
-			$this->load->view('templates/auth_footer');
-		}
+		$data['title'] = 'Lalajo Film';
+		$this->load->view('templates/main_header');
+		$this->load->view('Main');
+		$this->load->view('templates/main_footer');
 	}
 }

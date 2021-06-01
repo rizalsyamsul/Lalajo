@@ -1,51 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
 
-
-.DaftarLL {
-  position: relative;
-  text-align:center;
-  top: 0;
-  left: 5%;
-  height: 100px;
-  width: 90%;
-  margin-bottom: 450px;
-}
-
-.HeaderLL {
-  position: center;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 300px;
-  width: 100%;
-  background-image : url('<?php echo base_url() ?>/gambar/header.png');
-  background-size: 70% ;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-h1{
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 54px;
-  color: white;
-  text-align:center;
-
-}
-.card-img-top{
-  width: 100%;
-  height :570px;
-}
-</style>
-</head>
-<body>
 <div class="row">
   <div class="HeaderLL">
     <div class="row justify-content-center">
@@ -82,8 +37,7 @@ h1{
           <div class="row">
             <div class="col-md-4">
               <div class="card mb-2">
-                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/Avenger.jpg"
-                  alt="Card image cap">
+                <img class="card-img-top" src="<?= base_url('/assets/img/movies/Avenger.jpg') ?>" alt="Card image cap">
                 <div class="card-body">
                   <h4 class="card-title">The Avengers</h4>
 
@@ -93,8 +47,7 @@ h1{
 
             <div class="col-md-4 clearfix d-none d-md-block">
               <div class="card mb-2">
-                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/Joker.png"
-                  alt="Card image cap">
+                <img class="card-img-top" src="<?= base_url('/assets/img/movies/Joker.png') ?>" alt="Card image cap">
                 <div class="card-body">
                   <h4 class="card-title">Joker</h4>
 
@@ -104,8 +57,7 @@ h1{
 
             <div class="col-md-4 clearfix d-none d-md-block">
               <div class="card mb-2">
-                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/Kingsman.jpg"
-                  alt="Card image cap">
+                <img class="card-img-top" src="<?= base_url('/assets/img/movies/Kingsman.jpg') ?>" alt="Card image cap">
                 <div class="card-body">
                   <h4 class="card-title">Kingsman</h4>
 
@@ -123,8 +75,7 @@ h1{
           <div class="row">
             <div class="col-md-4">
               <div class="card mb-2">
-                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/MortalKombat.jpg"
-                  alt="Card image cap">
+                <img class="card-img-top" src="<?= base_url('/assets/img/movies/MortalKombat.jpg') ?>" alt="Card image cap">
                 <div class="card-body">
                   <h4 class="card-title">Mortal Kombat</h4>
 
@@ -134,8 +85,7 @@ h1{
 
             <div class="col-md-4 clearfix d-none d-md-block">
               <div class="card mb-2">
-                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/SuicideSquad.jpg"
-                  alt="Card image cap">
+                <img class="card-img-top" src="<?= base_url('/assets/img/movies/SuicideSquad.jpg') ?>" alt="Card image cap">
                 <div class="card-body">
                   <h4 class="card-title">Suicide Squad</h4>
 
@@ -145,8 +95,7 @@ h1{
 
             <div class="col-md-4 clearfix d-none d-md-block">
               <div class="card mb-2">
-                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/TheRaid.jpg"
-                  alt="Card image cap">
+                <img class="card-img-top" src="<?= base_url('/assets/img/movies/TheRaid.jpg') ?>" alt="Card image cap">
                 <div class="card-body">
                   <h4 class="card-title">The Raid</h4>
 
@@ -162,8 +111,7 @@ h1{
           <div class="row">
             <div class="col-md-4">
               <div class="card mb-2">
-                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/Cemara.jpg"
-                  alt="Card image cap">
+                <img class="card-img-top" src="<?= base_url('/assets/img/movies/Cemara.jpg') ?>" alt="Card image cap">
                 <div class="card-body">
                   <h4 class="card-title">Keluarga Cemara</h4>
 
@@ -173,8 +121,7 @@ h1{
 
             <div class="col-md-4 clearfix d-none d-md-block">
               <div class="card mb-2">
-                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/sosis.jpg"
-                  alt="Card image cap">
+                <img class="card-img-top" src="<?= base_url('/assets/img/movies/sosis.jpg') ?>" alt="Card image cap">
                 <div class="card-body">
                   <h4 class="card-title">Sausage Party</h4>
 
@@ -184,8 +131,7 @@ h1{
 
             <div class="col-md-4 clearfix d-none d-md-block">
               <div class="card mb-2">
-                <img class="card-img-top" src="<?php echo base_url() ?>/gambar/pie.jpg"
-                  alt="Card image cap">
+                <img class="card-img-top" src="<?= base_url('/assets/img/movies/pie.jpg') ?>" alt="Card image cap">
                 <div class="card-body">
                   <h4 class="card-title">American Pie</h4>
 
@@ -201,5 +147,3 @@ h1{
     <!--/.Carousel Wrapper-->
   </div>
 </div>
-</body>
-</html>
