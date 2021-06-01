@@ -45,11 +45,14 @@
             <label>No of Tickets</label>
             <input class="form-control col-md-2" type="number" value="0" min="0" max="10">
         </div>
+        <div class="card shadow col-md-4">
 
-        <div class="form-group col-md-8">
-            <label>Seat</label>
+        </div>
+        <div class="form-group col-md-8 shadow">
+
             <div class="form-row">
-                <div class="col-md-2">
+                <img src="<?= base_url('assets/img/screen.jpg'); ?>" alt="">
+                <div class="col-md-2 m-1">
                     <select class="form-control" id="exampleFormControlSelect1">
                         <option>A</option>
                         <option>B</option>
@@ -61,19 +64,18 @@
                         <option>H</option>
                         <option>I</option>
                         <option>J</option>
+                        <option>K</option>
+                        <option>L</option>
                     </select>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 m-1">
                     <select class="form-control" id="exampleFormControlSelect1">
                         <option>1</option>
-                        <option>2</option>
                         <option>3</option>
-                        <option>R</option>
                         <option>5</option>
-                        <option>6</option>
                         <option>7</option>
-                        <option>8</option>
                         <option>9</option>
+                        <option>11</option>
                     </select>
                 </div>
             </div>

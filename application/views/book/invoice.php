@@ -14,8 +14,9 @@
                     <p class="card-text">XXI Transmart Buah Batu</p>
                     <p class="card-text"><small class="text-muted">Senin, 31 May 2021</small></p>
                     <p class="card-text"><small class="text-muted">D1, D2</small></p>
+                    <p class="card-text font-weight-bold">Total: Rp 80,000</p>
                     <div class="form-group">
-                        <label>Booking Code</label>
+                        <label>Booking Code:</label>
                         <input class="form-control col-md-7" value="#1ORK1P2" disabled>
                         <button type="submit" class="btn btn-success mt-2" disabled>Paid</button>
                     </div>
@@ -38,6 +39,12 @@
                     <p class="card-text">XXI Transmart Buah Batu</p>
                     <p class="card-text"><small class="text-muted">Senin, 31 May 2021</small></p>
                     <p class="card-text"><small class="text-muted">D1, D2</small></p>
+                    <p class="card-text font-weight-bold">Total: Rp 80,000</p>
+                    <div class="form-group">
+                        <label>Booking Code:</label>
+                        <input class="form-control col-md-7" value="-" disabled>
+                        <button type="submit" class="btn btn-danger mt-2" disabled>Unpaid</button>
+                    </div>
                 </div>
             </div>
         </div>
