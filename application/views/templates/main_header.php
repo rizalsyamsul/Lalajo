@@ -52,7 +52,7 @@
                                 Category
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="<?= base_url('main/action'); ?>">Action</a>
                                 <a class="dropdown-item" href="#">Romance</a>
                                 <a class="dropdown-item" href="#">Comedy</a>
                                 <a class="dropdown-item" href="#">Thriller</a>

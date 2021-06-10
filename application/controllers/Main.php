@@ -27,4 +27,13 @@ class Main extends CI_Controller
 		$this->load->view('Theater');
 		$this->load->view('templates/main_footer');
 	}
-}
+
+	public function action()
+	{
+		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+		$data['title'] = 'Category Action';
+		$this->load->view('templates/main_header', $data);
+		$this->load->view('Action');
+		$this->load->view('templates/main_footer');
+	}
+}	
