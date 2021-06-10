@@ -41,7 +41,7 @@
     width: 100%;
     height: 570px;
   }
-</style>>
+</style>
 
 <div class="row">
   <div class="HeaderLL">

@@ -1,4 +1,3 @@
-
 <?php $i = 1; ?>
 <?php foreach ($inv as $data) :  ?>
 <div class="container-fluid">
@@ -18,7 +17,7 @@
                     <div class="form-group">
                         <label>Booking Code:</label>
                         <input class="form-control col-md-7" value="<?= $data['code']; ?>" disabled>
-                        <button type="submit" class="btn btn-danger mt-2" disabled>Paid</button>
+                        <button type="submit" class="btn btn-success mt-2" disabled>Paid</button>
                     </div>
                 </div>
             </div>
