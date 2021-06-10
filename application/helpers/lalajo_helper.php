@@ -7,6 +7,7 @@ function is_logged_in()
     $CI = get_instance();
 
     if (!$CI->session->userdata('email')) {
+        $CI->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">You have not logged in!</div>');
         redirect('auth');
     } else {
 
