@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2021 at 09:01 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.3
+-- Generation Time: Jun 10, 2021 at 09:42 AM
+-- Server version: 10.4.10-MariaDB
+-- PHP Version: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,34 @@ SET time_zone = "+00:00";
 --
 -- Database: `tubesrpl`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `invoice`
+--
+
+CREATE TABLE `invoice` (
+  `id` int(11) NOT NULL,
+  `name` varchar(128) NOT NULL,
+  `film` varchar(128) NOT NULL,
+  `theater` varchar(128) NOT NULL,
+  `date` varchar(128) NOT NULL,
+  `kursi` varchar(128) NOT NULL,
+  `harga` int(10) NOT NULL,
+  `code` int(8) NOT NULL,
+  `image` varchar(64) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `invoice`
+--
+
+INSERT INTO `invoice` (`id`, `name`, `film`, `theater`, `date`, `kursi`, `harga`, `code`, `image`) VALUES
+(1, 'sam', 'The Mentalist', 'XXI Trans Studio ', 'Senin, 31 Mei 2021', 'D1, D3', 80000, 66614545, 'mentalist.jpg'),
+(2, 'sam', 'Mortal Kombat', 'XXI Trans Studio ', 'Senin, 31 Mei 2021', 'D1, D3', 80000, 66654213, 'MortalKombat.jpg'),
+(3, 'admin', 'Mortal Kombat', 'XXI Trans Studio ', 'Senin, 31 Mei 2021', 'D1, D5', 80000, 66654214, 'MortalKombat.jpg'),
+(4, 'adam', 'American Pie', 'XXI Trans Studio ', 'Senin, 31 Mei 2021', 'A1, A2', 80000, 66669999, 'pie.jpg');
 
 -- --------------------------------------------------------
 
@@ -49,7 +77,9 @@ INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_a
 (3, 'tes123', 'tes1@tes.com', 'default.jpg', '$2y$10$h0EWwu72M0cw7EDxLEdPhemllnHybVrm31/ciiFM1jO/xiA7PwCfe', 2, 1, 1620808241),
 (4, 'admin', 'admin@admin.com', 'default.jpg', '$2y$10$dnxuCZlK9tXDy2X8W9IV7.zVlJ30dW9qDTuKljqM9NTS5Y/8KsK0u', 1, 1, 1621070107),
 (5, 'Raihan Setiawan', 'raihannsetiawan@gmail.com', 'default.jpg', '$2y$10$cKUUkwekGpi3EYREmVZPVOOnEE8zVZebuItCpxosN1E4vuHhwAWZ6', 2, 1, 1621071849),
-(6, 'modul13', 'modul13@gmail.com', 'default.jpg', '$2y$10$RVcmZAvRFPPQk0SKquWxrecHI6ibTJUokg3fCQl6l/zwZwIRWDhmC', 2, 1, 1623142655);
+(6, 'modul13', 'modul13@gmail.com', 'default.jpg', '$2y$10$RVcmZAvRFPPQk0SKquWxrecHI6ibTJUokg3fCQl6l/zwZwIRWDhmC', 2, 1, 1623142655),
+(7, 'sam', 'sam@sam.com', 'default.jpg', '$2y$10$RpNnKcmlG3S6wiCoCUWZje/TI.jXY5rkjPKLd07gLd2O0JGUV3Q7W', 2, 1, 1623309678),
+(8, 'adam', 'adam@adam.com', 'default.jpg', '$2y$10$xsS/VTWVkmd1vkwlRj7WNOrbBl0mSrH50JjgaJ5LBgZ0GUlXYCLG6', 2, 1, 1623310710);
 
 -- --------------------------------------------------------
 
@@ -151,6 +181,12 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 --
 
 --
+-- Indexes for table `invoice`
+--
+ALTER TABLE `invoice`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -185,10 +221,16 @@ ALTER TABLE `user_sub_menu`
 --
 
 --
+-- AUTO_INCREMENT for table `invoice`
+--
+ALTER TABLE `invoice`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user_access_menu`

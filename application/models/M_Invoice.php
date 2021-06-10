@@ -8,5 +8,4 @@ class M_Invoice extends CI_model
     return $this->db->get('invoice')->result_array();
   }
 
-  
 }

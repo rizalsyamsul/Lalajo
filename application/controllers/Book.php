@@ -32,8 +32,11 @@ class Book extends CI_Controller
     }
     public function invoice()
     {
+
         $data['title'] = 'Invoice';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $name = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row('name');
+        $data['inv'] = $this->M_Invoice->getInvoicebyName($name);
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
