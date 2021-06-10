@@ -5,16 +5,21 @@
     <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
     <form>
-        <div class="form-group col-md-8">
-            <label>City</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-                <option>Bekasi</option>
-                <option>Bandung</option>
-                <option>Cirebon</option>
-                <option>Jakarta</option>
-                <option>Bogor</option>
-            </select>
-        </div>
+      <div class="form-group col-md-8">
+          <label>Film</label>
+          <select class="form-control" id="exampleFormControlSelect1">
+              <option>The Mentalist</option>
+              <option>Mortal Kombat</option>
+              <option>The Avenger</option>
+              <option>Joker</option>
+              <option>Kingsman</option>
+              <option>Keluarga Cemara</option>
+              <option>Suicide Squad</option>
+              <option>The Raid</option>
+              <option>Sausage Party</option>
+          </select>
+      </div>
+
         <div class="form-group col-md-8">
             <label>Cinema</label>
             <select class="form-control" id="exampleFormControlSelect1">
@@ -23,14 +28,7 @@
                 <option>XII Paris Van Java</option>
             </select>
         </div>
-        <div class="form-group col-md-8">
-            <label>Movie</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-                <option>The Unholy</option>
-                <option>Ragnarok</option>
-                <option>Lucifer</option>
-            </select>
-        </div>
+
         <div class="form-group col-md-8">
             <label>Date</label>
             <input class="form-control" type="date" value="2021-06-01" id="example-datetime-local-input">
