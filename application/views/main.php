@@ -75,34 +75,35 @@
 
         <!--First slide-->
         <div class="carousel-item active">
-
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card mb-2">
-                <img class="card-img-top" src="<?= base_url('/assets/img/movies/Avenger.jpg') ?>" alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">The Avengers</h4>
-
+          <div class="container">
+            <div class="card-deck mt-3">
+              <div class="card col-md text-center">
+                <div class="card-block">
+                  <img src="<?= base_url('/assets/img/movies/Avenger.jpg') ?>" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">The Avengers</h5>
+                    <a href="#"></a>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="col-md-4 clearfix d-none d-md-block">
-              <div class="card mb-2">
-                <img class="card-img-top" src="<?= base_url('/assets/img/movies/Joker.png') ?>" alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">Joker</h4>
-
+              <div class="card col-md text-center">
+                <div class="card-block">
+                  <img src="<?= base_url('/assets/img/movies/Joker.png') ?>" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Joker</h5>
+                    <a href="#"></a>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="col-md-4 clearfix d-none d-md-block">
-              <div class="card mb-2">
-                <img class="card-img-top" src="<?= base_url('/assets/img/movies/Kingsman.jpg') ?>" alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">Kingsman</h4>
-
+              <div class="card col-md text-center">
+                <div class="card-block">
+                  <img src="<?= base_url('/assets/img/movies/Kingsman.jpg') ?>" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Kingsman</h5>
+                    <a href="#"></a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -113,34 +114,35 @@
 
         <!--Second slide-->
         <div class="carousel-item">
-
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card mb-2">
-                <img class="card-img-top" src="<?= base_url('/assets/img/movies/MortalKombat.jpg') ?>" alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">Mortal Kombat</h4>
-
+          <div class="container">
+            <div class="card-deck mt-3">
+              <div class="card col-md text-center">
+                <div class="card-block">
+                  <img src="<?= base_url('/assets/img/movies/MortalKombat.jpg') ?>" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Mortal Kombat</h5>
+                    <a href="#"></a>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="col-md-4 clearfix d-none d-md-block">
-              <div class="card mb-2">
-                <img class="card-img-top" src="<?= base_url('/assets/img/movies/SuicideSquad.jpg') ?>" alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">Suicide Squad</h4>
-
+              <div class="card col-md text-center">
+                <div class="card-block">
+                  <img src="<?= base_url('/assets/img/movies/SuicideSquad.jpg') ?>" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Suicide Squad</h5>
+                    <a href="#"></a>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="col-md-4 clearfix d-none d-md-block">
-              <div class="card mb-2">
-                <img class="card-img-top" src="<?= base_url('/assets/img/movies/TheRaid.jpg') ?>" alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">The Raid</h4>
-
+              <div class="card col-md text-center">
+                <div class="card-block">
+                  <img src="<?= base_url('/assets/img/movies/TheRaid.jpg') ?>" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">The Raid</h5>
+                    <a href="#"></a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -149,34 +151,35 @@
         <!--/.Second slide-->
         <!--Third slide-->
         <div class="carousel-item">
-
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card mb-2">
-                <img class="card-img-top" src="<?= base_url('/assets/img/movies/Cemara.jpg') ?>" alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">Keluarga Cemara</h4>
-
+          <div class="container">
+            <div class="card-deck mt-3">
+              <div class="card col-md text-center">
+                <div class="card-block">
+                  <img src="<?= base_url('/assets/img/movies/Cemara.jpg') ?>" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Keluarga Cemara</h5>
+                    <a href="#"></a>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="col-md-4 clearfix d-none d-md-block">
-              <div class="card mb-2">
-                <img class="card-img-top" src="<?= base_url('/assets/img/movies/sosis.jpg') ?>" alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">Sausage Party</h4>
-
+              <div class="card col-md text-center">
+                <div class="card-block">
+                  <img src="<?= base_url('/assets/img/movies/sosis.jpg') ?>" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Sausage Party</h5>
+                    <a href="#"></a>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="col-md-4 clearfix d-none d-md-block">
-              <div class="card mb-2">
-                <img class="card-img-top" src="<?= base_url('/assets/img/movies/mentalist.jpg') ?>" alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">The Mentalist</h4>
-
+              <div class="card col-md text-center">
+                <div class="card-block">
+                  <img src="<?= base_url('/assets/img/movies/mentalist.jpg') ?>" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">The Mentalist</h5>
+                    <a href="#"></a>
+                  </div>
                 </div>
               </div>
             </div>
