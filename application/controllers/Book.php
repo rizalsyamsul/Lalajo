@@ -13,15 +13,27 @@ class Book extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Book';
-        $data['user'] = $this->M_Invoice->getSession();
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('book/index', $data);
-        $this->load->view('templates/footer', $data);
-
         
+        if ($this->form_validation->run() == false) {
+            $data['title'] = 'Book';
+            $data['user'] = $this->M_Invoice->getSession();
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('book/index', $data);
+            $this->load->view('templates/footer', $data);
+        }
+        else{
+            $data = [
+                'film' => $this->input->post('film'),
+                'theater'  => $this->input->post('theater'),
+                'date'  => $this->input->post('date'),
+                'waktu'  => $this->input->post('waktu'),
+                'kursi'  => $this->input->post('kursi')
+            ];
+             $this->M_Booking->insertBooking($data);
+        }
+
     }
     public function payment()
     {
