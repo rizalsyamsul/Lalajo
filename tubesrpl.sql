@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2021 at 09:01 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.3
+-- Generation Time: Jun 13, 2021 at 01:02 PM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 7.3.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -21,6 +20,21 @@ SET time_zone = "+00:00";
 --
 -- Database: `tubesrpl`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `booking`
+--
+
+CREATE TABLE `booking` (
+  `id` int(11) NOT NULL,
+  `film` varchar(128) NOT NULL,
+  `theater` varchar(128) NOT NULL,
+  `date` varchar(128) NOT NULL,
+  `waktu` varchar(128) NOT NULL,
+  `kursi` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -75,7 +89,7 @@ INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_a
 (1, 'RAIHAN N SETIAWAN', 'raihan@raihan.com', 'profile.jpg', '$2y$10$ERXIxgQnAnh1Kja1C6gpWOaFMMyFl/lXVMIF2N7XZVfk8vTaAOM0G', 2, 1, 1620723565),
 (2, 'tes', 'tes@tes.com', 'default.jpg', '$2y$10$hMox47ZUQ8oH93L0272OqehUlxilYcYAH7mcAqtkqruB4LVctlzLK', 2, 1, 1620723945),
 (3, 'tes123', 'tes1@tes.com', 'default.jpg', '$2y$10$h0EWwu72M0cw7EDxLEdPhemllnHybVrm31/ciiFM1jO/xiA7PwCfe', 2, 1, 1620808241),
-(4, 'admin', 'admin@admin.com', 'default.jpg', '$2y$10$oS5MhKh7s1TizCOFRTtK.e4Sk2i0svBCMZNnvsH6vNf1aXnRNrJVO', 1, 1, 1621070107),
+(4, 'admin', 'admin@admin.com', 'default.jpg', '$2y$10$FvXArl7ob3uHefvu4Nk9x.UBmFWOJzIBf6cimIeSLEuYiQqtUaRiW', 1, 1, 1621070107),
 (5, 'Raihan Setiawan', 'raihannsetiawan@gmail.com', 'default.jpg', '$2y$10$cKUUkwekGpi3EYREmVZPVOOnEE8zVZebuItCpxosN1E4vuHhwAWZ6', 2, 1, 1621071849),
 (6, 'modul13', 'modul13@gmail.com', 'default.jpg', '$2y$10$RVcmZAvRFPPQk0SKquWxrecHI6ibTJUokg3fCQl6l/zwZwIRWDhmC', 2, 1, 1623142655),
 (7, 'sam', 'sam@sam.com', 'default.jpg', '$2y$10$RpNnKcmlG3S6wiCoCUWZje/TI.jXY5rkjPKLd07gLd2O0JGUV3Q7W', 2, 1, 1623309678),
@@ -181,6 +195,12 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 --
 
 --
+-- Indexes for table `booking`
+--
+ALTER TABLE `booking`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `invoice`
 --
 ALTER TABLE `invoice`
@@ -219,6 +239,12 @@ ALTER TABLE `user_sub_menu`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `booking`
+--
+ALTER TABLE `booking`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `invoice`
