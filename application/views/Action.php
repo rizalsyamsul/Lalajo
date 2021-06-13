@@ -56,7 +56,7 @@
       <div class="card-block">
         <img src="<?= base_url('/assets/img/movies/TheRaid.jpg') ?>" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">TheRaid</h5>
+          <h5 class="card-title">The Raid</h5>
           <a href="#"></a>
         </div>
       </div>
@@ -66,7 +66,7 @@
       <div class="card-block">
         <img src="<?= base_url('/assets/img/movies/AliensVsPredator.jpg') ?>" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">AliensVsPredator</h5>
+          <h5 class="card-title">Aliens Vs Predator</h5>
           <a href="#"></a>
         </div>
       </div>

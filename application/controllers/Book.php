@@ -7,6 +7,7 @@ class Book extends CI_Controller
     {
         parent::__construct();
         is_logged_in();
+        $this->load->model('M_Booking');
         $this->load->model('M_Invoice');
     }
 
@@ -19,6 +20,8 @@ class Book extends CI_Controller
         $this->load->view('templates/topbar', $data);
         $this->load->view('book/index', $data);
         $this->load->view('templates/footer', $data);
+
+        
     }
     public function payment()
     {

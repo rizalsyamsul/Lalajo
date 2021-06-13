@@ -39,7 +39,8 @@
 
   .card-img-top {
     width: 100%;
-    height: 570px;
+    height: 35vw;
+    object-fit: cover;
   }
 </style>
 
