@@ -7,5 +7,7 @@ class M_Booking extends CI_model
     {
         return $this->db->insert('booking', $data);
     }
+
+    
     
 }
