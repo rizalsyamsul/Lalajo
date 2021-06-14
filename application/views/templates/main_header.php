@@ -44,12 +44,10 @@
                         <li class="nav-item">
                             <a class="nav-link" href="<?= base_url('main/theater'); ?>">Theater</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Movies</a>
-                        </li>
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Category
+                                Film Category
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="<?= base_url('main/action'); ?>">Action</a>
