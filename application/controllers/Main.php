@@ -36,9 +36,7 @@ class Main extends CI_Controller
 		$this->load->view('Action');
 		$this->load->view('templates/main_footer');
 	}
-<<<<<<< Updated upstream
-}
-=======
+
 	public function romance()
 	{
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
@@ -71,5 +69,4 @@ class Main extends CI_Controller
 		$this->load->view('Horror');
 		$this->load->view('templates/main_footer');
 	}
-}	
->>>>>>> Stashed changes
+}

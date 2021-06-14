@@ -34,7 +34,7 @@
                     <a class="nav-link" href="<?= base_url('main'); ?>">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Theater</a>
+                    <a class="nav-link" href="<?= base_url('main/theater'); ?>">Theater</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Movies</a>
@@ -44,11 +44,11 @@
                         Category
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Romance</a>
-                        <a class="dropdown-item" href="#">Comedy</a>
-                        <a class="dropdown-item" href="#">Thriller</a>
-                        <a class="dropdown-item" href="#">Horror</a>
+                      <a class="dropdown-item" href="<?= base_url('main/action'); ?>">Action</a>
+                      <a class="dropdown-item" href="<?= base_url('main/romance'); ?>">Romance</a>
+                      <a class="dropdown-item" href="<?= base_url('main/comedy'); ?>">Comedy</a>
+                      <a class="dropdown-item" href="<?= base_url('main/thriller'); ?>">Thriller</a>
+                      <a class="dropdown-item" href="<?= base_url('main/horror'); ?>">Horror</a>
                     </div>
                 </li>
             </ul>
