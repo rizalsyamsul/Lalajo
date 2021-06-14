@@ -50,4 +50,9 @@ class M_Auth extends CI_model
     {
         return $this->db->insert('appoitment', $data);
     }
+
+    public function getSession()
+    {
+      return $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+    }
 }

@@ -12,7 +12,7 @@ class Main extends CI_Controller
 
 	public function index()
 	{
-		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+		$data['user'] = $this->M_Auth->getSession();
 		$data['title'] = 'LalajoFilm: Cheapest Movie Tickets Online Booking';
 		$this->load->view('templates/main_header', $data);
 		$this->load->view('Main');
@@ -21,7 +21,7 @@ class Main extends CI_Controller
 
 	public function theater()
 	{
-		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+		$data['user'] = $this->M_Auth->getSession();
 		$data['title'] = 'Theater of LalajoFilm';
 		$this->load->view('templates/main_header', $data);
 		$this->load->view('Theater');
@@ -30,10 +30,10 @@ class Main extends CI_Controller
 
 	public function action()
 	{
-		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+		$data['user'] = $this->M_Auth->getSession();
 		$data['title'] = 'Category Action';
 		$this->load->view('templates/main_header', $data);
 		$this->load->view('Action');
 		$this->load->view('templates/main_footer');
 	}
-}	
+}

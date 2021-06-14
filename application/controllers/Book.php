@@ -13,7 +13,7 @@ class Book extends CI_Controller
 
     public function index()
     {
-        
+
         if ($this->form_validation->run() == false) {
             $data['title'] = 'Book';
             $data['user'] = $this->M_Invoice->getSession();

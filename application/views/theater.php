@@ -1,84 +1,109 @@
 <!DOCTYPE html>
-<style>
-* {box-sizing: border-box}
-
-/* Container needed to position the overlay. Adjust the width as needed */
-.container {
-  position: relative;
-  width: 100%;
-  max-width: 300px;
-}
-
-/* Make the image to responsive */
-.image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* The overlay effect - lays on top of the container and over the image */
-.overlay {
-  position: absolute;
-  bottom: 0;
-  background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.5); /* Black see-through */
-  color: #f1f1f1;
-  width: 100%;
-  transition: .5s ease;
-  opacity:0;
-  color: white;
-  font-size: 20px;
-  padding: 20px;
-  text-align: center;
-}
-
-/* When you mouse over the container, fade in the overlay title */
-.container:hover .overlay {
-  opacity: 1;
-}
-
-</style>
 <html>
+<head>
+<style>
+body {margin:25px;}
 
-<div class="row">
+div.polaroid {
+  width: 80%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.container {
+  text-align: center;
+  padding: 10px 20px;
+}
+h2 {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 54px;
+  color: white;
+  text-align: center;
+
+}
+p {
+  font-family: Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  color: black;
+  text-align: center;
+
+}
+.HeaderLL {
+  position: center;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 300px;
+  width: 100%;
+  background-image: url('<?= base_url('/assets/img/header.png'); ?>');
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+</style>
+</head>
+<body>
   <div class="HeaderLL">
     <div class="row justify-content-center">
     </div>
   </div>
-  <div class="DaftarLL">
+<h2>Theater of Lalajo Film</h2>
 
-    <div class="container">
-      <div class="row align-items-start">
-      <div class="col">
-        <div class="container">
-          <img src=<?= base_url('/assets/img/theater/trans.jpg') ?>>
-          <div class="overlay">XXI Transmart Buah Batu</div>
-        </div></div>
-      <div class="col">
-        <div class="container">
-            <img src=<?= base_url('/assets/img/theater/trans.jpg') ?>>
-            <div class="overlay">XXI Transmart Buah Batu</div>
-          </div></div>
-      </div>
-
-      <div class="row align-items-center">
-      <div class="col">
-        <div class="container">
-          <img src=<?= base_url('/assets/img/theater/trans.jpg') ?> >
-          <div class="overlay">XXI Transmart Buah Batu</div>
-          </div></div>
-      <div class="col">
-        <div class="container">
-          <img src=<?= base_url('/assets/img/theater/trans.jpg') ?> >
-          <div class="overlay">XXI Transmart Buah Batu</div>
-          </div></div>
-      </div>
-      
-    </div>
-
-
-
-
-
+<div class="polaroid">
+  <img src=<?= base_url('/assets/img/theater/trans.jpg') ?> alt="5 Terre" style="width:100%">
+  <div class="container">
+  <p>Transmart Buah Batu XXI</p>
   </div>
 </div>
+
+<div class="polaroid">
+  <img src=<?= base_url('/assets/img/theater/citylink.jpg') ?> alt="Norther Lights" style="width:100%">
+  <div class="container">
+  <p>Festival Citylink XXI</p>
+  </div>
+</div>
+
+<div class="polaroid">
+  <img src=<?= base_url('/assets/img/theater/empire.jpg') ?> alt="Norther Lights" style="width:100%">
+  <div class="container">
+  <p>Empire XXI</p>
+  </div>
+</div>
+
+<div class="polaroid">
+  <img src=<?= base_url('/assets/img/theater/ciwalk.jpg') ?> alt="Norther Lights" style="width:100%">
+  <div class="container">
+  <p>Ciwalk XXI</p>
+  </div>
+</div>
+
+<div class="polaroid">
+  <img src=<?= base_url('/assets/img/theater/btc.jpg') ?> alt="Norther Lights" style="width:100%">
+  <div class="container">
+  <p>BTC XXI</p>
+  </div>
+</div>
+
+<div class="polaroid">
+  <img src=<?= base_url('/assets/img/theater/braga.jpg') ?> alt="Norther Lights" style="width:100%">
+  <div class="container">
+  <p>Braga XXI</p>
+  </div>
+</div>
+
+<div class="polaroid">
+  <img src=<?= base_url('/assets/img/theater/tsm.jpg') ?> alt="Norther Lights" style="width:100%">
+  <div class="container">
+  <p>Trans Studio Mall XXI</p>
+  </div>
+</div>
+
+</body>
+</html>

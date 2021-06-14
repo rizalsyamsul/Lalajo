@@ -23,7 +23,7 @@
         <div class="form-group col-md-8">
             <label>Cinema</label>
             <select class="form-control" id="exampleFormControlSelect1">
-                <option>Trans Studio Mall XXI </option>
+                <option>Trans Studio Mall XXI</option>
                 <option>Braga XXI</option>
                 <option>BTC XXI</option>
                 <option>Ciwalk XXI</option>
