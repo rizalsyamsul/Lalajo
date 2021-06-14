@@ -36,4 +36,40 @@ class Main extends CI_Controller
 		$this->load->view('Action');
 		$this->load->view('templates/main_footer');
 	}
+<<<<<<< Updated upstream
 }
+=======
+	public function romance()
+	{
+		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+		$data['title'] = 'Category Romance';
+		$this->load->view('templates/main_header', $data);
+		$this->load->view('Romance');
+		$this->load->view('templates/main_footer');
+	}
+	public function comedy()
+	{
+		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+		$data['title'] = 'Category Comedy';
+		$this->load->view('templates/main_header', $data);
+		$this->load->view('Comedy');
+		$this->load->view('templates/main_footer');
+	}
+	public function thriller()
+	{
+		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+		$data['title'] = 'Category Thriller';
+		$this->load->view('templates/main_header', $data);
+		$this->load->view('Thriller');
+		$this->load->view('templates/main_footer');
+	}
+	public function Horror()
+	{
+		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+		$data['title'] = 'Category Horror';
+		$this->load->view('templates/main_header', $data);
+		$this->load->view('Horror');
+		$this->load->view('templates/main_footer');
+	}
+}	
+>>>>>>> Stashed changes
