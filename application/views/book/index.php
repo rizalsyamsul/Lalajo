@@ -22,13 +22,8 @@
 
         <div class="form-group col-md-8">
             <label>Cinema</label>
-<<<<<<< Updated upstream
-            <select class="form-control" id="exampleFormControlSelect1">
-                <option>Trans Studio Mall XXI</option>
-=======
             <select class="form-control" id="cinema" name="cinema">
                 <option>Trans Studio Mall XXI </option>
->>>>>>> Stashed changes
                 <option>Braga XXI</option>
                 <option>BTC XXI</option>
                 <option>Ciwalk XXI</option>

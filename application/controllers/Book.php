@@ -14,8 +14,7 @@ class Book extends CI_Controller
     public function index()
     {
 
-<<<<<<< Updated upstream
-=======
+
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $this->form_validation->set_rules('film', 'Film', 'required');
@@ -24,8 +23,6 @@ class Book extends CI_Controller
         $this->form_validation->set_rules('time', 'Time', 'required');
         $this->form_validation->set_rules('tickets_amount', 'Amount of Tickets', 'required');
 
-
->>>>>>> Stashed changes
         if ($this->form_validation->run() == false) {
             $data['title'] = 'Book';
             $data['user'] = $this->M_Invoice->getSession();
