@@ -23,9 +23,13 @@
         <div class="form-group col-md-8">
             <label>Cinema</label>
             <select class="form-control" id="exampleFormControlSelect1">
-                <option>XXI Trans Studio Mall</option>
-                <option>CGV Metro Indah Mall</option>
-                <option>XII Paris Van Java</option>
+                <option>Trans Studio Mall XXI </option>
+                <option>Braga XXI</option>
+                <option>BTC XXI</option>
+                <option>Ciwalk XXI</option>
+                <option>Empire XXI</option>
+                <option>Festival Citylink XXI</option>
+                <option>Transmart Buah Batu XXI</option>
             </select>
         </div>
 
@@ -36,7 +40,14 @@
 
         <div class="form-group col-md-8">
             <label>Time</label>
-            <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option>12:15</option>
+                <option>12:45</option>
+                <option>15:05</option>
+                <option>15:35</option>
+                <option>17:55</option>
+                <option>18:25</option>
+            </select>
         </div>
 
         <div class="form-group col-md-8">
@@ -74,6 +85,10 @@
                         <option>7</option>
                         <option>9</option>
                         <option>11</option>
+                        <option>13</option>
+                        <option>15</option>
+                        <option>17</option>
+                        <option>19</option>
                     </select>
                 </div>
             </div>

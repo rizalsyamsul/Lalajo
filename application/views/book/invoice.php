@@ -10,9 +10,9 @@
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title"><?= $data['film']; ?></h5>
-                    <p class="card-text"><?= $data['theater']; ?></p>
+                    <p class="card-text"><?= $data['bioskop']; ?></p>
                     <p class="card-text"><small class="text-muted"><?= $data['date']; ?></small></p>
-                    <p class="card-text"><small class="text-muted"><?= $data['kursi']; ?></small></p>
+                    <p class="card-text"><small class="text-muted">Theater: <?= $data['theater']; ?>  Seat: <?= $data['kursi']; ?></small></p>
                     <p class="card-text font-weight-bold">Total: Rp <?= $data['harga']; ?></p>
                     <div class="form-group">
                         <label>Booking Code:</label>

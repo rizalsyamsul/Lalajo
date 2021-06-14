@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2021 at 01:02 PM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 7.3.28
+-- Generation Time: Jun 14, 2021 at 05:44 PM
+-- Server version: 10.4.10-MariaDB
+-- PHP Version: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -46,8 +47,9 @@ CREATE TABLE `invoice` (
   `id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL,
   `film` varchar(128) NOT NULL,
-  `theater` varchar(128) NOT NULL,
+  `bioskop` varchar(128) NOT NULL,
   `date` varchar(128) NOT NULL,
+  `theater` int(64) NOT NULL,
   `kursi` varchar(128) NOT NULL,
   `harga` int(10) NOT NULL,
   `code` int(8) NOT NULL,
@@ -58,11 +60,11 @@ CREATE TABLE `invoice` (
 -- Dumping data for table `invoice`
 --
 
-INSERT INTO `invoice` (`id`, `name`, `film`, `theater`, `date`, `kursi`, `harga`, `code`, `image`) VALUES
-(1, 'sam', 'The Mentalist', 'XXI Trans Studio ', 'Senin, 31 Mei 2021', 'D1, D3', 80000, 66614545, 'mentalist.jpg'),
-(2, 'sam', 'Mortal Kombat', 'XXI Trans Studio ', 'Senin, 31 Mei 2021', 'D1, D3', 80000, 66654213, 'MortalKombat.jpg'),
-(3, 'admin', 'Mortal Kombat', 'XXI Trans Studio ', 'Senin, 31 Mei 2021', 'D1, D5', 80000, 66654214, 'MortalKombat.jpg'),
-(4, 'adam', 'American Pie', 'XXI Trans Studio ', 'Senin, 31 Mei 2021', 'A1, A2', 80000, 66669999, 'pie.jpg');
+INSERT INTO `invoice` (`id`, `name`, `film`, `bioskop`, `date`, `theater`, `kursi`, `harga`, `code`, `image`) VALUES
+(1, 'sam', 'The Mentalist', 'XXI Trans Studio ', 'Senin, 31 Mei 2021', 2, 'D1, D3', 80000, 66614545, 'mentalist.jpg'),
+(2, 'sam', 'Mortal Kombat', 'XXI Trans Studio ', 'Senin, 31 Mei 2021', 4, 'D1, D3', 80000, 66654213, 'MortalKombat.jpg'),
+(3, 'admin', 'Mortal Kombat', 'XXI Trans Studio ', 'Senin, 31 Mei 2021', 6, 'D1, D5', 80000, 66654214, 'MortalKombat.jpg'),
+(4, 'adam', 'American Pie', 'XXI Trans Studio ', 'Senin, 31 Mei 2021', 1, 'A1, A2', 80000, 66669999, 'pie.jpg');
 
 -- --------------------------------------------------------
 
