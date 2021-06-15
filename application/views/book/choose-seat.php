@@ -9,6 +9,8 @@
             <?= $this->session->flashdata('message'); ?>
         </div>
     </div>
+    <p><?= base_url('/assets/img/movies/') $image; ?> </p>
+    <p><?= $tickets_amount; ?> </p>
     <div class="form-row">
         <img src="<?= base_url('assets/img/screen.jpg'); ?>" alt="">
         <div class="col-md-2 m-1">

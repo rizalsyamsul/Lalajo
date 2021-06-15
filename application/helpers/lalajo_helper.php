@@ -52,4 +52,12 @@ function check_access($role_id, $menu_id)
     if ($result->num_rows() > 0) {
         return "checked='checked'";
     }
+
+function check_image($film)
+    {
+        if ($film == 'The Mentalist' ) {
+            return "mentalist.jpg";
+        }
+    }
+
 }

@@ -39,13 +39,21 @@ class Book extends CI_Controller
                 'time'  => $this->input->post('time'),
                 'tickets_amount'  => $this->input->post('tickets_amount')
             ];
-            $this->M_Booking->insertBooking($data);
-            $this->session->set_flashdata(
-                'message',
-                '<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span></button>Booking successful!</div>'
-            );
-            redirect('book/index');
+            $data['image'] = check_image($data['film']);
+            //$this->M_Booking->insertBooking($data);
+            $data['title'] = 'Book';
+            $data['user'] = $this->M_Invoice->getSession();
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('book/choose-seat', $data);
+            $this->load->view('templates/footer', $data);
+            // $this->session->set_flashdata(
+            //     'message',
+            //     '<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            //     <span aria-hidden="true">&times;</span></button>Booking successful!</div>'
+            // );
+            // redirect('book/index');
         }
     }
 
@@ -83,4 +91,6 @@ class Book extends CI_Controller
         $this->load->view('book/invoice', $data);
         $this->load->view('templates/footer', $data);
     }
+
+
 }
