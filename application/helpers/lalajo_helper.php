@@ -55,7 +55,7 @@ function check_access($role_id, $menu_id)
 
 function check_image($film)
     {
-        if ($film == 'The Mentalist' ) {
+        if ($film == "The Mentalist" ) {
             return "mentalist.jpg";
         }
     }

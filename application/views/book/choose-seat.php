@@ -1,3 +1,9 @@
+<style>
+  .img{
+    width: 250px;
+    height: 320px;
+  }
+</style>
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -9,7 +15,7 @@
             <?= $this->session->flashdata('message'); ?>
         </div>
     </div>
-    <p><?= base_url('/assets/img/movies/') $image; ?> </p>
+    <img src="<?= base_url('/assets/img/movies/'), $image; ?>" class="img">
     <p><?= $tickets_amount; ?> </p>
     <div class="form-row">
         <img src="<?= base_url('assets/img/screen.jpg'); ?>" alt="">

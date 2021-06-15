@@ -39,7 +39,7 @@ class Book extends CI_Controller
                 'time'  => $this->input->post('time'),
                 'tickets_amount'  => $this->input->post('tickets_amount')
             ];
-            $data['image'] = check_image($data['film']);
+            $data['image'] = 'mentalist.jpg';
             //$this->M_Booking->insertBooking($data);
             $data['title'] = 'Book';
             $data['user'] = $this->M_Invoice->getSession();
