@@ -20,7 +20,7 @@
                 <label>Payment Code:</label>
                 <input class="form-control col-md-7" value="PY<?= $data['bcode']; ?>" disabled>
                 <a href="<?= base_url('Book/deletePayment/') . $data['id']; ?>" class="btn btn-outline-warning mt-2" onclick="return confirm('Apakah anda yakin membatalkan pesanan ini?');">Cancel</a>
-                <a href="<?= base_url('Book/insertPayment/') . $data['id']; ?>" class="btn btn-primary">Pay</a>
+                <a href="<?= base_url('Book/insertPayment/') . $data['id']; ?>" class="btn btn-primary mt-2">Pay</a>
                 <!-- <button type="submit" class="btn btn-primary mt-2">Confirm Payment</button> -->
               </div>
             </div>

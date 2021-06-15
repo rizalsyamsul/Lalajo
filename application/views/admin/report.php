@@ -18,9 +18,9 @@
                             <th>Film</th>
                             <th>Cinema</th>
                             <th>Date</th>
-                            <th>Theater</th>
-                            <th>Seats</th>
+                            <th>Time</th>
                             <th>Price</th>
+                            <th>Seats</th>
                             <th>Code</th>
                         </tr>
                     </thead>

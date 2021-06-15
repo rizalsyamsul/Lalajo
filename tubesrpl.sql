@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 15, 2021 at 08:49 AM
--- Server version: 10.4.10-MariaDB
--- PHP Version: 7.3.12
+-- Generation Time: Jun 15, 2021 at 09:49 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -72,10 +72,11 @@ CREATE TABLE `invoice` (
 --
 
 INSERT INTO `invoice` (`id`, `name`, `film`, `cinema`, `date`, `time`, `harga`, `seats`, `code`, `image`) VALUES
-(1, 'sam', 'The Mentalist', 'XXI Trans Studio ', 'Senin, 31 Mei 2021', '', 80000, '', 66614545, 'mentalist.jpg'),
-(2, 'sam', 'Mortal Kombat', 'XXI Trans Studio ', 'Senin, 31 Mei 2021', '', 80000, '', 66654213, 'MortalKombat.jpg'),
-(3, 'admin', 'Mortal Kombat', 'XXI Trans Studio ', 'Senin, 31 Mei 2021', '', 80000, '', 66654214, 'MortalKombat.jpg'),
-(4, 'adam', 'American Pie', 'XXI Trans Studio ', 'Senin, 31 Mei 2021', '', 80000, '', 66669999, 'pie.jpg');
+(1, 'sam', 'The Mentalist', 'XXI Trans Studio ', '2021-06-01', '12:15', 40000, 'A3', 66614545, 'mentalist.jpg'),
+(2, 'sam', 'Mortal Kombat', 'XXI Trans Studio ', '2021-06-01', '12:15', 40000, 'B5', 66654213, 'MortalKombat.jpg'),
+(3, 'adam', 'Mortal Kombat', 'XXI Trans Studio ', '2021-06-01', '12:15', 40000, 'C7', 66654214, 'MortalKombat.jpg'),
+(5, 'adam', 'The Mentalist', 'Trans Studio Mall XXI', '2021-06-01', '12:15', 40000, 'A1', 54388295, 'mentalist.jpg'),
+(6, 'RAIHAN N SETIAWAN', 'Keluarga Cemara', 'BTC XXI', '2021-06-17', '15:35', 40000, 'G8', 79208787, 'Cemara.jpg');
 
 -- --------------------------------------------------------
 
@@ -129,8 +130,7 @@ INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
 (2, 1, 2),
 (3, 2, 2),
 (6, 1, 3),
-(9, 2, 5),
-(10, 1, 5);
+(9, 2, 5);
 
 -- --------------------------------------------------------
 
@@ -258,13 +258,13 @@ ALTER TABLE `user_sub_menu`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`
