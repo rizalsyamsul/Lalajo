@@ -16,6 +16,7 @@
         </div>
     </div>
     <img src="<?= base_url('/assets/img/movies/'), $image; ?>" class="img">
+    <p><?= $name; ?></p>
     <p>Kode Pembayaran: AB<?php echo mt_rand(1000000, 99999999); ?>  </p>
     <div class="form-row">
         <img src="<?= base_url('assets/img/screen.jpg'); ?>" alt="">

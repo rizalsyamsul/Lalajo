@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2021 at 07:03 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.3
+-- Generation Time: Jun 15, 2021 at 07:39 AM
+-- Server version: 10.4.10-MariaDB
+-- PHP Version: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -30,21 +30,23 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `booking` (
   `id` int(11) NOT NULL,
+  `name` varchar(64) NOT NULL,
   `film` varchar(128) NOT NULL,
   `cinema` varchar(128) NOT NULL,
   `date` varchar(128) NOT NULL,
   `time` varchar(128) NOT NULL,
-  `tickets_amount` int(5) NOT NULL
+  `tickets_amount` int(5) NOT NULL,
+  `image` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`id`, `film`, `cinema`, `date`, `time`, `tickets_amount`) VALUES
-(1, 'The Mentalist', 'Trans Studio Mall XXI', '2021-06-01', '12:15', 2),
-(2, 'Joker', 'Ciwalk XXI', '2021-06-01', '15:05', 3),
-(3, 'Sausage Party', 'Ciwalk XXI', '2021-06-26', '18:25', 7);
+INSERT INTO `booking` (`id`, `name`, `film`, `cinema`, `date`, `time`, `tickets_amount`, `image`) VALUES
+(20, '', 'Keluarga Cemara', 'Trans Studio Mall XXI', '2021-06-01', '12:15', 2, 'Cemara.jpg'),
+(21, 'sam', 'The Mentalist', 'Trans Studio Mall XXI', '2021-06-01', '12:15', 2, 'mentalist.jpg'),
+(22, 'sam', 'Joker', 'Braga XXI', '2021-06-01', '12:15', 3, 'Joker.png');
 
 -- --------------------------------------------------------
 
@@ -256,7 +258,7 @@ ALTER TABLE `user_sub_menu`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `invoice`

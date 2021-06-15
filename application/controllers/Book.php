@@ -55,16 +55,18 @@ class Book extends CI_Controller
             $this->load->view('book/index', $data);
             $this->load->view('templates/footer', $data);
         } else {
-
             $film = $this->input->post('film');
+            $data['user'] = $this->M_Invoice->getSession();
+
             $data = [
+                'name' => $this->M_Invoice->getSessionName(),
                 'film' => $this->input->post('film'),
                 'cinema'  => $this->input->post('cinema'),
                 'date'  => $this->input->post('date'),
                 'time'  => $this->input->post('time'),
-                'tickets_amount'  => $this->input->post('tickets_amount')
+                'tickets_amount'  => $this->input->post('tickets_amount'),
+                'image' => $this->check_image($film)
             ];
-            $data['image'] = $this->check_image($film);
             $this->M_Booking->insertBooking($data);
             $data['title'] = 'Book';
             $data['user'] = $this->M_Invoice->getSession();
