@@ -11,27 +11,27 @@ class Book extends CI_Controller
         $this->load->model('M_Invoice');
     }
 
-    public function check_image($film){
-      if($film == 'The Mentalist'){
-        return 'mentalist.jpg';
-      }else if ($film == 'Mortal Kombat'){
-        return 'MortalKombat.jpg';
-      }else if ($film == 'The Avenger'){
-        return 'Avenger.jpg';
-      }else if ($film == 'Joker'){
-        return 'Joker.png';
-      }else if ($film == 'Kingsman'){
-        return 'Kingsman.jpg';
-      }else if ($film == 'Keluarga Cemara'){
-        return 'Cemara.jpg';
-      }else if ($film == 'Suicide Squad'){
-        return 'SuicideSquad.jpg';
-      }else if ($film == 'The Raid'){
-        return 'TheRaid.jpg';
-      }else if ($film == 'Sausage Party'){
-        return 'sosis.jpg';
-      };
-
+    public function check_image($film)
+    {
+        if ($film == 'The Mentalist') {
+            return 'mentalist.jpg';
+        } else if ($film == 'Mortal Kombat') {
+            return 'MortalKombat.jpg';
+        } else if ($film == 'The Avenger') {
+            return 'Avenger.jpg';
+        } else if ($film == 'Joker') {
+            return 'Joker.png';
+        } else if ($film == 'Kingsman') {
+            return 'Kingsman.jpg';
+        } else if ($film == 'Keluarga Cemara') {
+            return 'Cemara.jpg';
+        } else if ($film == 'Suicide Squad') {
+            return 'SuicideSquad.jpg';
+        } else if ($film == 'The Raid') {
+            return 'TheRaid.jpg';
+        } else if ($film == 'Sausage Party') {
+            return 'sosis.jpg';
+        };
     }
 
     public function index()
@@ -44,7 +44,7 @@ class Book extends CI_Controller
         $this->form_validation->set_rules('cinema', 'Cinema', 'required');
         $this->form_validation->set_rules('date', 'Date', 'required');
         $this->form_validation->set_rules('time', 'Time', 'required');
-        $this->form_validation->set_rules('tickets_amount', 'Amount of Tickets', 'required');
+        $this->form_validation->set_rules('seat', 'seat', 'required');
 
         if ($this->form_validation->run() == false) {
             $data['title'] = 'Book';
@@ -56,7 +56,7 @@ class Book extends CI_Controller
             $this->load->view('templates/footer', $data);
         } else {
             $film = $this->input->post('film');
-            $data['user'] = $this->M_Invoice->getSession();
+            // $data['user'] = $this->M_Invoice->getSession();
 
             $data = [
                 'name' => $this->M_Invoice->getSessionName(),
@@ -64,23 +64,23 @@ class Book extends CI_Controller
                 'cinema'  => $this->input->post('cinema'),
                 'date'  => $this->input->post('date'),
                 'time'  => $this->input->post('time'),
-                'tickets_amount'  => $this->input->post('tickets_amount'),
+                'seats'  => $this->input->post('seat'),
                 'image' => $this->check_image($film)
             ];
             $this->M_Booking->insertBooking($data);
-            $data['title'] = 'Book';
-            $data['user'] = $this->M_Invoice->getSession();
-            $this->load->view('templates/header', $data);
-            $this->load->view('templates/sidebar', $data);
-            $this->load->view('templates/topbar', $data);
-            $this->load->view('book/choose-seat', $data);
-            $this->load->view('templates/footer', $data);
-            // $this->session->set_flashdata(
-            //     'message',
-            //     '<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            //     <span aria-hidden="true">&times;</span></button>Booking successful!</div>'
-            // );
-            // redirect('book/index');
+            // $data['title'] = 'Book';
+            // $data['user'] = $this->M_Invoice->getSession();
+            // $this->load->view('templates/header', $data);
+            // $this->load->view('templates/sidebar', $data);
+            // $this->load->view('templates/topbar', $data);
+            // $this->load->view('book/choose-seat', $data);
+            // $this->load->view('templates/footer', $data);
+            $this->session->set_flashdata(
+                'message',
+                '<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button>Booking successful!</div>'
+            );
+            redirect('book/index');
         }
     }
 
@@ -118,8 +118,4 @@ class Book extends CI_Controller
         $this->load->view('book/invoice', $data);
         $this->load->view('templates/footer', $data);
     }
-
-
-
-
 }

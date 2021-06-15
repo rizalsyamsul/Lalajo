@@ -50,11 +50,17 @@
             </select>
         </div>
 
-        <div class="form-group col-md-8">
+        <!-- <div class="form-group col-md-8">
             <label>No of Tickets</label>
             <input class="form-control col-md-2" type="number" value="0" min="0" max="10" id="tickets_amount" name="tickets_amount">
+        </div> -->
+        <div class="form-row">
+            <img src="<?= base_url('assets/img/screen.jpg'); ?>" alt="">
+            <div class="form-group col-sm-0">
+                <input type="text" class="form-control form-control-user" id="seat" name="seat" placeholder="Seat">
+                <?= form_error('name', '<small class="text-danger pl-3">', '</small>'); ?>
+            </div>
         </div>
-
         <div class="form-group col-md-8">
             <button type="submit" class="btn btn-success">Buy</button>
             <!-- <a type="button" class="btn btn-success" href="http://tix.id/">Buy</a> -->
