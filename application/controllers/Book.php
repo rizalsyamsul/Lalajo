@@ -39,7 +39,8 @@ class Book extends CI_Controller
                 'time'  => $this->input->post('time'),
                 'tickets_amount'  => $this->input->post('tickets_amount')
             ];
-            $data['image'] = 'mentalist.jpg';
+            //$film = $this->input->post('film');
+            //$data['image'] = check_image($film);
             //$this->M_Booking->insertBooking($data);
             $data['title'] = 'Book';
             $data['user'] = $this->M_Invoice->getSession();
@@ -91,6 +92,8 @@ class Book extends CI_Controller
         $this->load->view('book/invoice', $data);
         $this->load->view('templates/footer', $data);
     }
+
+
 
 
 }

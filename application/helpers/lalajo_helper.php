@@ -54,10 +54,14 @@ function check_access($role_id, $menu_id)
     }
 
 function check_image($film)
-    {
-        if ($film == "The Mentalist" ) {
-            return "mentalist.jpg";
-        }
-    }
+{
+      $CI = get_instance();
+      $set = 'The Mentalist';
+      $cek = strpos($film, $set);
+      if ($cek) {
+        return "mentalist.jpg";
+      }
+}
 
 }
+?>

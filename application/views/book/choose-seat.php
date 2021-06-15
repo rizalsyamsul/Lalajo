@@ -15,7 +15,7 @@
             <?= $this->session->flashdata('message'); ?>
         </div>
     </div>
-    <img src="<?= base_url('/assets/img/movies/'), $image; ?>" class="img">
+    <!-- <img src="<?= base_url('/assets/img/movies/'), $image; ?>" class="img"> -->
     <p><?= $tickets_amount; ?> </p>
     <div class="form-row">
         <img src="<?= base_url('assets/img/screen.jpg'); ?>" alt="">
