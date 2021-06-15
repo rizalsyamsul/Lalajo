@@ -1,22 +1,24 @@
-<!-- Begin Page Content -->
+<?php $i = 1; ?>
+<?php foreach ($pay as $data) :  ?>
 <div class="container-fluid">
+    <!-- Page Heading -->
     <div class="card mb-3" style="max-width: 540px;">
         <div class="row no-gutters">
             <div class="col-md-4">
-                <img src="<?= base_url('/assets/img/movies/MortalKombat.jpg') ?>" class="card-img" alt="...">
+                <img src="<?= base_url('assets/img/movies/') . $data['image']; ?>" class="card-img" alt="...">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">Mortal Kombat</h5>
-                    <p class="card-text">XXI Transmart Buah Batu</p>
-                    <p class="card-text"><small class="text-muted">Senin, 31 May 2021</small></p>
-                    <p class="card-text"><small class="text-muted">D1, D2</small></p>
-                    <p class="card-text font-weight-bold">Total: Rp 80,000</p>
+                    <h5 class="card-title"><?= $data['film']; ?></h5>
+                    <p class="card-text"><?= $data['cinema']; ?></p>
+                    <p class="card-text"><small class="text-muted"><?= $data['date']; ?></small></p>
+                    <p class="card-text"><small class="text-muted">Time: <?= $data['time']; ?></small></p>
+                    <p class="card-text"><small class="text-muted">Seat: <?= $data['seats']; ?></small></p>
+                    <p class="card-text font-weight-bold">Total: Rp 40.000</p>
                     <div class="form-group">
                         <label>Payment Code:</label>
-                        <input class="form-control col-md" value="#46H8TH6GRT4ER89" disabled>
-                        <!-- <button type="submit" class="btn btn-success mt-2">Payment Confirmation</button> -->
-                        <a class="btn btn-primary" href="<?= base_url('book/invoice'); ?>">Pay</a>
+                        <input class="form-control col-md-7" value="PY<?= $data['bcode']; ?>" disabled>
+                        <button type="submit" class="btn btn-primary mt-2">Pay</button>
                     </div>
                 </div>
             </div>
@@ -24,6 +26,9 @@
     </div>
 </div>
 <!-- /.container-fluid -->
+<?php $i++; ?>
+<?php endforeach; ?>
+
 
 
 <!-- Modal -->

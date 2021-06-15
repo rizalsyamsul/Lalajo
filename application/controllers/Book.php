@@ -9,6 +9,7 @@ class Book extends CI_Controller
         is_logged_in();
         $this->load->model('M_Booking');
         $this->load->model('M_Invoice');
+        $this->load->model('M_Payment');
     }
 
     public function check_image($film)
@@ -34,10 +35,12 @@ class Book extends CI_Controller
         };
     }
 
+    public function rand_numb(){
+      return mt_rand(1000000, 99999999);
+    }
+
     public function index()
     {
-
-
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $this->form_validation->set_rules('film', 'Film', 'required');
@@ -65,7 +68,8 @@ class Book extends CI_Controller
                 'date'  => $this->input->post('date'),
                 'time'  => $this->input->post('time'),
                 'seats'  => $this->input->post('seat'),
-                'image' => $this->check_image($film)
+                'image' => $this->check_image($film),
+                'bcode' => $this->rand_numb()
             ];
             $this->M_Booking->insertBooking($data);
             // $data['title'] = 'Book';
@@ -83,28 +87,63 @@ class Book extends CI_Controller
             redirect('book/index');
         }
     }
-
-    public function choose_seat()
-    {
-        $data['title'] = 'Choose your Seat';
-        $data['user'] = $this->M_Invoice->getSession();
-
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('book/choose-seat', $data);
-        $this->load->view('templates/footer', $data);
-    }
+    //
+    // public function choose_seat()
+    // {
+    //     $data['title'] = 'Choose your Seat';
+    //     $data['user'] = $this->M_Invoice->getSession();
+    //
+    //     $this->load->view('templates/header', $data);
+    //     $this->load->view('templates/sidebar', $data);
+    //     $this->load->view('templates/topbar', $data);
+    //     $this->load->view('book/choose-seat', $data);
+    //     $this->load->view('templates/footer', $data);
+    // }
 
     public function payment()
     {
-        $data['title'] = 'Payment';
-        $data['user'] = $this->M_Invoice->getSession();
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('book/payment', $data);
-        $this->load->view('templates/footer', $data);
+        // $data['title'] = 'Payment';
+        // $data['user'] = $this->M_Payment->getSession();
+        // $name =  $this->M_Payment->getSessionName();
+        // $data['pay'] = $this->M_Payment->getPaymentbyName($name);
+        // $this->load->view('templates/header', $data);
+        // $this->load->view('templates/sidebar', $data);
+        // $this->load->view('templates/topbar', $data);
+        // $this->load->view('book/payment', $data);
+        // $this->load->view('templates/footer', $data);
+        //
+        if ($this->form_validation->run() == false) {
+          $data['title'] = 'Payment';
+          $data['user'] = $this->M_Payment->getSession();
+          $name =  $this->M_Payment->getSessionName();
+          $data['pay'] = $this->M_Payment->getPaymentbyName($name);
+          $this->load->view('templates/header', $data);
+          $this->load->view('templates/sidebar', $data);
+          $this->load->view('templates/topbar', $data);
+          $this->load->view('book/payment', $data);
+          $this->load->view('templates/footer', $data);
+        } else {
+          $old = $this->M_Payment->get1PaymentbyName($name);
+          $data = [
+              'name' => $old['name'],
+              'film' => $old['film'],
+              'cinema'  => $old['cinema'],
+              'date'  => $old['date'],
+              'time'  => $old['time'],
+              'harga' => 40000,
+              'seats'  => $old['seats'],
+              'code' => $this->rand_numb(),
+              'image' => $old['image']
+
+          ];
+          $this->M_Payment->insertBooking($data);
+          $this->session->set_flashdata(
+              'message',
+              '<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span></button>Payment successful!</div>'
+          );
+          redirect('book/payment');
+        }
     }
     public function invoice()
     {
