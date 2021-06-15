@@ -35,8 +35,9 @@ class Book extends CI_Controller
         };
     }
 
-    public function rand_numb(){
-      return mt_rand(1000000, 99999999);
+    public function rand_numb()
+    {
+        return mt_rand(1000000, 99999999);
     }
 
     public function index()
@@ -87,18 +88,7 @@ class Book extends CI_Controller
             redirect('book/index');
         }
     }
-    //
-    // public function choose_seat()
-    // {
-    //     $data['title'] = 'Choose your Seat';
-    //     $data['user'] = $this->M_Invoice->getSession();
-    //
-    //     $this->load->view('templates/header', $data);
-    //     $this->load->view('templates/sidebar', $data);
-    //     $this->load->view('templates/topbar', $data);
-    //     $this->load->view('book/choose-seat', $data);
-    //     $this->load->view('templates/footer', $data);
-    // }
+
 
     public function payment()
     {
@@ -112,38 +102,49 @@ class Book extends CI_Controller
         // $this->load->view('book/payment', $data);
         // $this->load->view('templates/footer', $data);
         //
-        if ($this->form_validation->run() == false) {
-          $data['title'] = 'Payment';
-          $data['user'] = $this->M_Payment->getSession();
-          $name =  $this->M_Payment->getSessionName();
-          $data['pay'] = $this->M_Payment->getPaymentbyName($name);
-          $this->load->view('templates/header', $data);
-          $this->load->view('templates/sidebar', $data);
-          $this->load->view('templates/topbar', $data);
-          $this->load->view('book/payment', $data);
-          $this->load->view('templates/footer', $data);
-        } else {
-          $old = $this->M_Payment->get1PaymentbyName($name);
-          $data = [
-              'name' => $old['name'],
-              'film' => $old['film'],
-              'cinema'  => $old['cinema'],
-              'date'  => $old['date'],
-              'time'  => $old['time'],
-              'harga' => 40000,
-              'seats'  => $old['seats'],
-              'code' => $this->rand_numb(),
-              'image' => $old['image']
 
-          ];
-          $this->M_Payment->insertBooking($data);
-          $this->session->set_flashdata(
-              'message',
-              '<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close">
+
+        if ($this->form_validation->run() == false) {
+            $data['title'] = 'Payment';
+            $data['user'] = $this->M_Payment->getSession();
+            $name =  $this->M_Payment->getSessionName();
+            $data['pay'] = $this->M_Payment->getPaymentbyName($name);
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('book/payment', $data);
+            $this->load->view('templates/footer', $data);
+        } else {
+
+            $old = $this->M_Payment->get1PaymentbyName($name);
+            $data = [
+                'name' => $old['name'],
+                'film' => $old['film'],
+                'cinema'  => $old['cinema'],
+                'date'  => $old['date'],
+                'time'  => $old['time'],
+                'harga' => 40000,
+                'seats'  => $old['seats'],
+                'code' => $this->rand_numb(),
+                'image' => $old['image']
+
+            ];
+            $this->M_Invoice-- > insertInvoice($data);
+            $this->session->set_flashdata(
+                'message',
+                '<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span></button>Payment successful!</div>'
-          );
-          redirect('book/payment');
+            );
+            redirect('book/payment');
         }
+    }
+
+
+    public function deletePayment($id)
+    {
+        $this->M_Payment->deletePayment($id);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Payment berhasil!</div>');
+        redirect('book/payment');
     }
     public function invoice()
     {

@@ -1,32 +1,35 @@
 <?php $i = 1; ?>
 <?php foreach ($pay as $data) :  ?>
-<div class="container-fluid">
-    <!-- Page Heading -->
-    <div class="card mb-3" style="max-width: 540px;">
+  <form action="<?= base_url('book/payment'); ?>" method="post">
+    <div class="container-fluid">
+      <!-- Page Heading -->
+      <div class="card mb-3" style="max-width: 540px;">
         <div class="row no-gutters">
-            <div class="col-md-4">
-                <img src="<?= base_url('assets/img/movies/') . $data['image']; ?>" class="card-img" alt="...">
+          <div class="col-md-4">
+            <img src="<?= base_url('assets/img/movies/') . $data['image']; ?>" class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"><?= $data['film']; ?></h5>
+              <p class="card-text"><?= $data['cinema']; ?></p>
+              <p class="card-text"><small class="text-muted"><?= $data['date']; ?></small></p>
+              <p class="card-text"><small class="text-muted">Time: <?= $data['time']; ?></small></p>
+              <p class="card-text"><small class="text-muted">Seat: <?= $data['seats']; ?></small></p>
+              <p class="card-text font-weight-bold">Total: Rp 40.000</p>
+              <div class="form-group">
+                <label>Payment Code:</label>
+                <input class="form-control col-md-7" value="PY<?= $data['bcode']; ?>" disabled>
+                <a href="<?= base_url('Book/deletePayment/') . $data['id']; ?>" class="btn btn-warning" onclick="return confirm('Apakah anda yakin membatalkan pesanan ini?');">Cancel</a>
+                <button type="submit" class="btn btn-primary mt-2">Pay</button>
+              </div>
             </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title"><?= $data['film']; ?></h5>
-                    <p class="card-text"><?= $data['cinema']; ?></p>
-                    <p class="card-text"><small class="text-muted"><?= $data['date']; ?></small></p>
-                    <p class="card-text"><small class="text-muted">Time: <?= $data['time']; ?></small></p>
-                    <p class="card-text"><small class="text-muted">Seat: <?= $data['seats']; ?></small></p>
-                    <p class="card-text font-weight-bold">Total: Rp 40.000</p>
-                    <div class="form-group">
-                        <label>Payment Code:</label>
-                        <input class="form-control col-md-7" value="PY<?= $data['bcode']; ?>" disabled>
-                        <button type="submit" class="btn btn-primary mt-2">Pay</button>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-<!-- /.container-fluid -->
-<?php $i++; ?>
+  </form>
+  <!-- /.container-fluid -->
+  <?php $i++; ?>
 <?php endforeach; ?>
 
 
@@ -42,18 +45,18 @@
         </button>
       </div>
       <div class="modal-body">
-         <div class="container-fluid">
-           <div class="row">
-            <div class="col-md-3 ml-auto" >Link Aja</div>
-            <div class="col-md-3 ml-auto" >BCA</div>
-            <div class="col-md-3 ml-auto" >OVO</div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-3 ml-auto">Link Aja</div>
+            <div class="col-md-3 ml-auto">BCA</div>
+            <div class="col-md-3 ml-auto">OVO</div>
           </div>
           <div class="row">
-           <div class="col-md-3 ml-auto" >Gopay</div>
-           <div class="col-md-3 ml-auto" >BNI</div>
-           <div class="col-md-3 ml-auto" >DANA</div>
-         </div>
-      </div>
+            <div class="col-md-3 ml-auto">Gopay</div>
+            <div class="col-md-3 ml-auto">BNI</div>
+            <div class="col-md-3 ml-auto">DANA</div>
+          </div>
+        </div>
 
       </div>
       <div class="modal-footer">

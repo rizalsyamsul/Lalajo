@@ -15,4 +15,8 @@ class M_Invoice extends CI_model
   {
     return $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row('name');
   }
+  public function insertInvoice($data)
+  {
+    return $this->db->insert('invoice', $data);
+  }
 }

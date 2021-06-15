@@ -31,11 +31,11 @@
                                 <td><?= $i; ?></td>
                                 <td><?= $r['name'] ?></td>
                                 <td><?= $r['film'] ?></td>
-                                <td><?= $r['bioskop'] ?></td>
+                                <td><?= $r['cinema'] ?></td>
                                 <td><?= $r['date'] ?></td>
-                                <td><?= $r['theater'] ?></td>
-                                <td><?= $r['kursi'] ?></td>
+                                <td><?= $r['time'] ?></td>
                                 <td><?= $r['harga'] ?></td>
+                                <td><?= $r['seats'] ?></td>
                                 <td><?= $r['code'] ?></td>
                             </tr>
                             <?php $i++; ?>

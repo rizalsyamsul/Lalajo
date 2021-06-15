@@ -16,10 +16,6 @@ class M_Payment extends CI_model
     return $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row('name');
   }
 
-  public function insertPayment($data)
-  {
-      return $this->db->insert('invoice', $data);
-  }
 
   public function get1PaymentbyName($name)
   {
@@ -27,4 +23,10 @@ class M_Payment extends CI_model
     return $this->db->get('booking')->row_array();
   }
 
+
+  public function deletePayment($id)
+  {
+    $this->db->where('id', $id);
+    $this->db->delete('booking');
+  }
 }
