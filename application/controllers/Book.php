@@ -85,7 +85,7 @@ class Book extends CI_Controller
                 '<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span></button>Booking successful!</div>'
             );
-            redirect('book/index');
+            redirect('book/payment');
         }
     }
 
@@ -101,40 +101,39 @@ class Book extends CI_Controller
         $this->load->view('templates/topbar', $data);
         $this->load->view('book/payment', $data);
         $this->load->view('templates/footer', $data);
-
     }
 
 
     public function deletePayment($id)
     {
         $this->M_Payment->deletePayment($id);
-        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Payment berhasil!</div>');
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Book has been cancelled!</div>');
         redirect('book/payment');
     }
 
     public function insertPayment($id)
     {
-      $old = $this->M_Payment->getPaymentbyid($id);
-      $data = [
-          'name' => $old['name'],
-          'film' => $old['film'],
-          'cinema'  => $old['cinema'],
-          'date'  => $old['date'],
-          'time'  => $old['time'],
-          'harga' => 40000,
-          'seats'  => $old['seats'],
-          'code' => $this->rand_numb(),
-          'image' => $old['image']
+        $old = $this->M_Payment->getPaymentbyid($id);
+        $data = [
+            'name' => $old['name'],
+            'film' => $old['film'],
+            'cinema'  => $old['cinema'],
+            'date'  => $old['date'],
+            'time'  => $old['time'],
+            'harga' => 40000,
+            'seats'  => $old['seats'],
+            'code' => $this->rand_numb(),
+            'image' => $old['image']
 
-      ];
-      $this->M_Invoice->insertInvoice($data);
-      $this->M_Payment->deletePayment($id);
-      $this->session->set_flashdata(
-          'message',
-          '<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        ];
+        $this->M_Invoice->insertInvoice($data);
+        $this->M_Payment->deletePayment($id);
+        $this->session->set_flashdata(
+            'message',
+            '<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span></button>Payment successful!</div>'
-      );
-      redirect('book/payment');
+        );
+        redirect('book/invoice');
     }
     public function invoice()
     {

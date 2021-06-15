@@ -1,3 +1,4 @@
+<?= $this->session->flashdata('message'); ?>
 <?php $i = 1; ?>
 <?php foreach ($pay as $data) :  ?>
   <form action="<?= base_url('book/payment'); ?>" method="post">
