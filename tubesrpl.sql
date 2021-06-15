@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 15, 2021 at 07:58 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.3
+-- Generation Time: Jun 15, 2021 at 08:49 AM
+-- Server version: 10.4.10-MariaDB
+-- PHP Version: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -36,19 +36,17 @@ CREATE TABLE `booking` (
   `date` varchar(128) NOT NULL,
   `time` varchar(128) NOT NULL,
   `seats` varchar(4) NOT NULL,
-  `image` varchar(64) NOT NULL
+  `image` varchar(64) NOT NULL,
+  `bcode` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`id`, `name`, `film`, `cinema`, `date`, `time`, `seats`, `image`) VALUES
-(20, '', 'Keluarga Cemara', 'Trans Studio Mall XXI', '2021-06-01', '12:15', '2', 'Cemara.jpg'),
-(21, 'sam', 'The Mentalist', 'Trans Studio Mall XXI', '2021-06-01', '12:15', '2', 'mentalist.jpg'),
-(22, 'sam', 'Joker', 'Braga XXI', '2021-06-01', '12:15', '3', 'Joker.png'),
-(23, 'admin', 'The Mentalist', 'Trans Studio Mall XXI', '2021-06-01', '12:15', '2', 'mentalist.jpg'),
-(24, 'admin', 'Mortal Kombat', 'Transmart Buah Batu XXI', '2021-06-01', '15:35', 'A1', 'MortalKombat.jpg');
+INSERT INTO `booking` (`id`, `name`, `film`, `cinema`, `date`, `time`, `seats`, `image`, `bcode`) VALUES
+(25, 'sam', 'The Avenger', 'BTC XXI', '2021-06-01', '15:05', 'A3', 'Avenger.jpg', 47091546),
+(26, 'sam', 'Kingsman', 'BTC XXI', '2021-06-01', '15:35', 'A6', 'Kingsman.jpg', 32631936);
 
 -- --------------------------------------------------------
 
@@ -60,11 +58,11 @@ CREATE TABLE `invoice` (
   `id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL,
   `film` varchar(128) NOT NULL,
-  `bioskop` varchar(128) NOT NULL,
+  `cinema` varchar(128) NOT NULL,
   `date` varchar(128) NOT NULL,
-  `theater` int(64) NOT NULL,
-  `kursi` varchar(128) NOT NULL,
+  `time` varchar(128) NOT NULL,
   `harga` int(10) NOT NULL,
+  `seats` varchar(4) NOT NULL,
   `code` int(8) NOT NULL,
   `image` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -73,11 +71,11 @@ CREATE TABLE `invoice` (
 -- Dumping data for table `invoice`
 --
 
-INSERT INTO `invoice` (`id`, `name`, `film`, `bioskop`, `date`, `theater`, `kursi`, `harga`, `code`, `image`) VALUES
-(1, 'sam', 'The Mentalist', 'XXI Trans Studio ', 'Senin, 31 Mei 2021', 2, 'D1, D3', 80000, 66614545, 'mentalist.jpg'),
-(2, 'sam', 'Mortal Kombat', 'XXI Trans Studio ', 'Senin, 31 Mei 2021', 4, 'D1, D3', 80000, 66654213, 'MortalKombat.jpg'),
-(3, 'admin', 'Mortal Kombat', 'XXI Trans Studio ', 'Senin, 31 Mei 2021', 6, 'D1, D5', 80000, 66654214, 'MortalKombat.jpg'),
-(4, 'adam', 'American Pie', 'XXI Trans Studio ', 'Senin, 31 Mei 2021', 1, 'A1, A2', 80000, 66669999, 'pie.jpg');
+INSERT INTO `invoice` (`id`, `name`, `film`, `cinema`, `date`, `time`, `harga`, `seats`, `code`, `image`) VALUES
+(1, 'sam', 'The Mentalist', 'XXI Trans Studio ', 'Senin, 31 Mei 2021', '', 80000, '', 66614545, 'mentalist.jpg'),
+(2, 'sam', 'Mortal Kombat', 'XXI Trans Studio ', 'Senin, 31 Mei 2021', '', 80000, '', 66654213, 'MortalKombat.jpg'),
+(3, 'admin', 'Mortal Kombat', 'XXI Trans Studio ', 'Senin, 31 Mei 2021', '', 80000, '', 66654214, 'MortalKombat.jpg'),
+(4, 'adam', 'American Pie', 'XXI Trans Studio ', 'Senin, 31 Mei 2021', '', 80000, '', 66669999, 'pie.jpg');
 
 -- --------------------------------------------------------
 
@@ -260,7 +258,7 @@ ALTER TABLE `user_sub_menu`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `invoice`
