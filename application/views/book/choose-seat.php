@@ -15,8 +15,8 @@
             <?= $this->session->flashdata('message'); ?>
         </div>
     </div>
-    <!-- <img src="<?= base_url('/assets/img/movies/'), $image; ?>" class="img"> -->
-    <p><?= $tickets_amount; ?> </p>
+    <img src="<?= base_url('/assets/img/movies/'), $image; ?>" class="img">
+    <p>Kode Pembayaran: AB<?php echo mt_rand(1000000, 99999999); ?>  </p>
     <div class="form-row">
         <img src="<?= base_url('assets/img/screen.jpg'); ?>" alt="">
         <div class="col-md-2 m-1">

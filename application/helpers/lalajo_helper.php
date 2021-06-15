@@ -53,15 +53,7 @@ function check_access($role_id, $menu_id)
         return "checked='checked'";
     }
 
-function check_image($film)
-{
-      $CI = get_instance();
-      $set = 'The Mentalist';
-      $cek = strpos($film, $set);
-      if ($cek) {
-        return "mentalist.jpg";
-      }
-}
+
 
 }
 ?>

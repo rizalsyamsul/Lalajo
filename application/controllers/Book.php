@@ -11,6 +11,29 @@ class Book extends CI_Controller
         $this->load->model('M_Invoice');
     }
 
+    public function check_image($film){
+      if($film == 'The Mentalist'){
+        return 'mentalist.jpg';
+      }else if ($film == 'Mortal Kombat'){
+        return 'MortalKombat.jpg';
+      }else if ($film == 'The Avenger'){
+        return 'Avenger.jpg';
+      }else if ($film == 'Joker'){
+        return 'Joker.png';
+      }else if ($film == 'Kingsman'){
+        return 'Kingsman.jpg';
+      }else if ($film == 'Keluarga Cemara'){
+        return 'Cemara.jpg';
+      }else if ($film == 'Suicide Squad'){
+        return 'SuicideSquad.jpg';
+      }else if ($film == 'The Raid'){
+        return 'TheRaid.jpg';
+      }else if ($film == 'Sausage Party'){
+        return 'sosis.jpg';
+      };
+
+    }
+
     public function index()
     {
 
@@ -32,6 +55,8 @@ class Book extends CI_Controller
             $this->load->view('book/index', $data);
             $this->load->view('templates/footer', $data);
         } else {
+
+            $film = $this->input->post('film');
             $data = [
                 'film' => $this->input->post('film'),
                 'cinema'  => $this->input->post('cinema'),
@@ -39,9 +64,8 @@ class Book extends CI_Controller
                 'time'  => $this->input->post('time'),
                 'tickets_amount'  => $this->input->post('tickets_amount')
             ];
-            //$film = $this->input->post('film');
-            //$data['image'] = check_image($film);
-            //$this->M_Booking->insertBooking($data);
+            $data['image'] = $this->check_image($film);
+            $this->M_Booking->insertBooking($data);
             $data['title'] = 'Book';
             $data['user'] = $this->M_Invoice->getSession();
             $this->load->view('templates/header', $data);
