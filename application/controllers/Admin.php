@@ -25,7 +25,7 @@ class Admin extends CI_Controller
         $data['title'] = 'Report';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['report'] = $this->db->get('invoice')->result_array();
-
+        $data['unpaid'] = $this->db->get('booking')->result_array();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
