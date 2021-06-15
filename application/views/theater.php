@@ -2,7 +2,7 @@
 <html>
 <head>
 <style>
-body {margin:25px;}
+body
 
 div.polaroid {
   width: 80%;
