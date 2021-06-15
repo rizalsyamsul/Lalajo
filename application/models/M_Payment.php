@@ -17,9 +17,9 @@ class M_Payment extends CI_model
   }
 
 
-  public function get1PaymentbyName($name)
+  public function getPaymentbyid($id)
   {
-    $this->db->where('name', $name);
+    $this->db->where('id', $id);
     return $this->db->get('booking')->row_array();
   }
 
